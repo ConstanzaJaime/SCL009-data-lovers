@@ -527,3 +527,125 @@ compañera:
 * [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
+
+
+#Aqui estoy escribiendo
+
+## INVESTIGACIÓN DEL USUARIO Y PROTOTIPADO
+
+
+### Usuario
+
+
+####Historia de usuario
+##### * Primera historia:
+-----El usuario necesita 
+Usuario 1 - Jugador nuevo que quiere conoces a los pokemon. para ello mostraremos a todos los pokemon. (mostrar data)
+
+**HTML**
+-Div estructural (donde estarán las imágenes de los pokemon.
+-Poner las imagenes de cada Pokemon.
+-Modal que muestre la información de cada pokemon.
+-Añada un elemento.
+**JS**
+-Recorrer la data.
+-Filtrar data.
+-Mostrar data.
+-Añada un elemento.
+**CSS**
+Responsive.
+Dar estilo a las tarjetas.
+Añada un elemento.
+**DOM**
+Imprimir las imágenes de todos los pokemones, en una cuadrícula.
+Añada un elemento
+**UX**
+Testear cuando esté funcional
+Añada un elemento
+
+##### * Segunda historia:
+-----El usuario
+Jugador que quiere tener a la mano información básica para su batallas.(Filtros debilidad en orden alfabético ascendente y descendente)
+
+**HTML**
+Select para filtrar por tipo
+Select para filtrar por debilidad
+Modal que muestre la información de cada pokemon
+Añada un elemento
+**JS**
+Función de filtrado
+Recorrer la data
+Filtrar la data
+Mostrar la data
+Añada un elemento
+**CSS**
+Dar fromato a los elementos en pantalla
+Responsive
+Añada un elemento
+**DOM**
+Hacer que el select de filtro por tipo imprima las imágenes de todos los pokemon de un tipo, en cuadricula
+Hacer que el select de filtro por debilidad imprima las imágenes de todos los pokemones débiles a un tipo, en una cadricula.
+Añada un elemento
+**UX**
+Testear cuando esté funcional
+Añada un elemento
+
+##### * Tercera historia:
+-----Nuestro usuario 
+Seguidor de la serie, que entiende lo básico pero necesita más información para jugar correctamente. (filtro por tipo en orden alfabético ascendente y descendente)
+**HTML**
+Hacer un select que permita filtrar alfabébticamente de forma ascendente y descendente
+Añada un elemento
+**JS**
+Función de ordenado
+Recorrer la data
+Filtrar la data
+mostrar la data
+Añada un elemento
+**CSS**
+Reponsive
+Dar formato a elementos que se agregan a la segunda página
+Añada un elemento
+**DOM**
+Imprimir los pokemon en orden que se indique
+Añada un elemento
+**UX**
+Testear cuando esté funcional
+Añada un elemento
+##### * Tercera historia:
+Necesita una comparación entre dos pokemones al momento de una batalla (calcular (filtro por nombre en orden ascendente y descendente))
+
+**HTML**
+Div estructural de la tercera página
+Select con las opciones para calcular
+Botón que muestre el calculo
+Añada un elemento
+**JS**
+Hacer función de calculo
+Recorrer data
+Filtrar data
+Mostrar data
+Añada un elemento
+**CSS**
+Dar estilo
+Responsive
+Añada un elemento
+**DOM**
+Evento que haga y muestre el calculo en la pantalla
+Añada un elemento
+**UX**
+Testear cuando esté funcional
+
+### Prototipado
+Como equipo hemos recurrido a diferentes herramientas y realizado una serie de etapas de investigación para poder cumplir de forma optima las necesidades del usuario . 
+
+En primer lugar tomamos el desafío de _**aprender conceptos claves del juego**_ para poder tener una idea global del funcionamiento de éste. Para ello hablamos con usuarios de la aplicación Pokemon Go, los cuales manifestaron a grandes rasgos los puntos que consideraban relevantes para ellos.
+
+Como segundo lugar elaboramos un breve _**cuestionario**_ basándonos en lo dicho por los jugadores y los recursos con los que se contaban, con el fin de evaluar y filtrar la información, descartando aquella que resulta poco relevante si no se encuentra sincronizado con el juego(por ejemplo: distancia del huevo,frecuencia de aparición, rango de distancia, etc).
+
+En tercer lugar creamos _**prototipos de baja fidelidad**_, donde se tomaron los puntos principales obtenidos a través del cuestionario, para ser utilizados en la página con la idea de ayudar al usuario.
+
+Como cuarto punto pasamos al _**prototipo de alta fidelidad**_ apoyandonos de la plataforma Figma, *dividido* en 2 partes. El primero en [formato web](https://www.figma.com/proto/UklgZbnbeiRK3uRGfYdwxycz/Pokemon-prototipe?node-id=44%3A1&scaling=min-zoom) con las opciones filtrar (por tipo o debilidad), ordenar (por nombre o número), además de lanzar el cálculo de pokemon débiles a cierto tipo, en el filtro "debilidad".El segundo en [formato móvil](https://www.figma.com/file/dHEHnZKbmbC33I0HEpZOxOSB/App-Pokemon-para-celular?node-id=0%3A1), con la opción de **CALCULAR ENTRE DOS POKEMON**.
+
+
+
