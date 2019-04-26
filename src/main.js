@@ -10,6 +10,7 @@ let home = document.getElementById("root").innerHTML =
 `;
 // Formato para las cartas que muestran todos los pokemon.
 let pageShowData = document.getElementById("enter_page").addEventListener("click", () => {
+
     document.getElementById("root").innerHTML= 
    ` <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
