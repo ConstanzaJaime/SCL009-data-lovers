@@ -13,21 +13,86 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <div class="row">
+
+  <!--PANTALLA PRINCIPAL "COMENZAR"-->
+  <div id="screen1">
+    <img src="img/logo-pokemon.png" class="align:center;"><br><br><br><br>
+    <button id="enter_page" class="align:center;">Entrar</button>
+  </div>
+  <!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
+  <div id="root">
+    <!-- Header -->
     <header class="col-12">
       <img src="img/logo-pokemon.png" alt="Logo de la página">
     </header>
-  </div>
-
-<!--Container
-<div id="container fluid(para darle todo el ancho de la página), al cambiarle padding">
-  <dive id="row">
-
-  </dive>
-</div>-->
-  <div id="root">
-
+    <!--NAVBAR INICIO-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     <!--DIV CONTENEDOR NAVBAR-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+         <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
+          <li class="nav-item active">
+            <a class="nav-link" id="showAllPokemon" href="#">Ver todos los pokemon<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <!--NAVBAR TIPO-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              TIPO
+            </a>
+            <div class="dropdown-menu" id="type" onchange="buttonType()" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" value="Grass" href="#">Grass</a>
+              <a class="dropdown-item" value="Poison" href="#">Poison</a>
+              <a class="dropdown-item" value="Fire" href="#">Fire</a>
+              <a class="dropdown-item" value="Flying" href="#">Flying</a>
+              <a class="dropdown-item" value="Water" href="#">Water</a>
+              <a class="dropdown-item" value="Bug" href="#">Bug</a>
+              <a class="dropdown-item" value="Normal" href="#">Normal</a>
+              <a class="dropdown-item" value="Electric" href="#">Electric</a>
+              <a class="dropdown-item" value="Ground" href="#">Ground</a>
+              <a class="dropdown-item" value="Fighting" href="#">Fighting</a>
+              <a class="dropdown-item" value="Psychic" href="#">Psychic</a>
+              <a class="dropdown-item" value="Rock" href="#">Rock</a>
+              <a class="dropdown-item" value="Ice" href="#">Ice</a>
+              <a class="dropdown-item" value="Ghost" href="#">Ghost</a>
+              <a class="dropdown-item" value="Dragon" href="#">Dragon</a>
+            </div>
+            <!--NAVBAR DEBILIDAD-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DEBILIDAD
+            </a>
+            <div class="dropdown-menu" id="weaknesses" onchange="buttonWeaknesses()"
+              aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" value="Grass" href="#">Grass</a>
+              <a class="dropdown-item" value="Poison" href="#">Poison</a>
+              <a class="dropdown-item" value="Fire" href="#">Fire</a>
+              <a class="dropdown-item" value="Flying" href="#">Flying</a>
+              <a class="dropdown-item" value="Water" href="#">Water</a>
+              <a class="dropdown-item" value="Bug" href="#">Bug</a>
+              <a class="dropdown-item" value="Electric" href="#">Electric</a>
+              <a class="dropdown-item" value="Ground" href="#">Ground</a>
+              <a class="dropdown-item" value="Fighting" href="#">Fighting</a>
+              <a class="dropdown-item" value="Psychic" href="#">Psychic</a>
+              <a class="dropdown-item" value="Rock" href="#">Rock</a>
+              <a class="dropdown-item" value="Ice" href="#">Ice</a>
+              <a class="dropdown-item" value="Ghost" href="#">Ghost</a>
+              <a class="dropdown-item" value="Dragon" href="#">Dragon</a>
+              <a class="dropdown-item" value="Fairy" href="#">Fairy</a>
+              <a class="dropdown-item" value="Dark" href="#">Dark</a>
+              <a class="dropdown-item" value="Steel" href="#">Steel</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -45,16 +110,3 @@
 </body>
 
 </html>
-<!--NAVBAR
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
--->
