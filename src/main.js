@@ -1,44 +1,74 @@
 /* Manejo del DOM */
-const data = POKEMON.pokemon;
+const data= Object.values(window.POKEMON.pokemon);
 
 window.onload
+
 //BLOQUEO DE SEGUNDA PÁGINA AL MOSTRAR LA PRIMERA
-  document.getElementById("root").style.display= "none";
+document.getElementById("screen2").style.display = "none";
 
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
-  const enterPage =document.getElementById("enter_page").addEventListener("click", () => {
-  document.getElementById("screen1").style.display= "none";
-  document.getElementById("root").style.display= "block";
- 
-  //TODAS LAS TARJETAS CON IMAGEN Y NOMBRE DEL PERSONAJE
-  for(let i = 0; i < data.length; i++) {
+const enterPage = document.getElementById("enter_page").addEventListener("click", () => {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "block";
+  data.forEach(element =>{
     document.getElementById("root").innerHTML +=
-      `
-        <div class="cards-container">
-            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-            <img src="${(data[i].img)}" class="card-img-top" alt="${(data[i].name)}">
-            <h5 class="card-title">${(data[i].name)}</h5>
-            </div> 
-        </div>`
-  } 
+    ` <div class="cards-container">
+          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title">${element.name}</h5>
+          </div> 
+      </div>`
+  });
 });
- //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
+
+//REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
 document.getElementById("showAllPokemon").addEventListener("click", () => {
-      return enterPage;
+  document.getElementById("root").innerHTML = "";
+  //Muestra todas las tarjetas con imagen y nombre
+  data.forEach(element =>{
+    document.getElementById("root").innerHTML +=
+    ` <div class="cards-container">
+          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title">${element.name}</h5>
+          </div> 
+      </div>`
+  });
 });
 
+//MUESTRA LOS POKEMON SEGUN TIPO
+document.getElementById("type").addEventListener("change", () => {
+  let selectValue = document.getElementById("type").value;
+  let type = window.filterType(data, selectValue);     
+  document.getElementById("root").innerHTML = "";
+  type.forEach(element => {
+    document.getElementById("root").innerHTML +=
+      ` <div class="cards-container">
+            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+            <img src="${element.img}" class="card-img-top" alt="${element.name}">
+            <h5 class="card-title">${element.name}</h5>
+            </div> 
+        </div>`  
+  }); 
+});
 
-//Formato para las cartas que muestran todos los pokemon.
-//const selectType= document.getElementById("type");
-  /*const selectType= document.getElementById("type");
+//MUESTRA LOS POKEMON SEGUN DEBILIDAD 
+document.getElementById("weaknesses").addEventListener("change", () => {
+  let selectValue = document.getElementById("weaknesses").value;
+  let weak  = window.filterWeak(data, selectValue);     
+  document.getElementById("root").innerHTML = "";
+  weak.forEach(element => {
+    document.getElementById("root").innerHTML +=
+      ` <div class="cards-container">
+            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+            <img src="${element.img}" class="card-img-top" alt="${element.name}">
+            <h5 class="card-title">${element.name}</h5>
+            </div> 
+        </div>`  
+  }); 
+});
 
-  selectType.addEventListener("change", () => {//FUNCION BOTON SELECCIONAR TIPO
-
-    let selectTypeValue = document.getElementById("type").value; //TOMAR SELECCION DE USUARIO
-    const typeFilter = data.filter((element)=>{data[element].type.includes(selectTypeValue)}) //FILTRADO DE LO QUE SE VA A IMPRIMIR
-    document.getElementById("root").innerHTML += `hola mundo ${typeFilter}` //UBICACION DE LO QUE SE VA A IMPRIMIR Y CONTENIDO DE LO QUE SE IMPRIME
-  
-  })*/
+//})
 //MODAL
 /*
 `<section>

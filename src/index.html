@@ -20,7 +20,7 @@
     <button id="enter_page" class="align:center;">Entrar</button>
   </div>
   <!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
-  <div id="root">
+  <div id="screen2">
     <!-- Header -->
     <header class="col-12">
       <img src="img/logo-pokemon.png" alt="Logo de la página">
@@ -32,67 +32,67 @@
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-     <!--DIV CONTENEDOR NAVBAR-->
+      <!--DIV CONTENEDOR NAVBAR-->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-         <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
+          <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
           <li class="nav-item active">
             <a class="nav-link" id="showAllPokemon" href="#">Ver todos los pokemon<span
                 class="sr-only">(current)</span></a>
           </li>
           <!--NAVBAR TIPO-->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              TIPO
-            </a>
-            <div class="dropdown-menu" id="type" onchange="buttonType()" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" value="Grass" href="#">Grass</a>
-              <a class="dropdown-item" value="Poison" href="#">Poison</a>
-              <a class="dropdown-item" value="Fire" href="#">Fire</a>
-              <a class="dropdown-item" value="Flying" href="#">Flying</a>
-              <a class="dropdown-item" value="Water" href="#">Water</a>
-              <a class="dropdown-item" value="Bug" href="#">Bug</a>
-              <a class="dropdown-item" value="Normal" href="#">Normal</a>
-              <a class="dropdown-item" value="Electric" href="#">Electric</a>
-              <a class="dropdown-item" value="Ground" href="#">Ground</a>
-              <a class="dropdown-item" value="Fighting" href="#">Fighting</a>
-              <a class="dropdown-item" value="Psychic" href="#">Psychic</a>
-              <a class="dropdown-item" value="Rock" href="#">Rock</a>
-              <a class="dropdown-item" value="Ice" href="#">Ice</a>
-              <a class="dropdown-item" value="Ghost" href="#">Ghost</a>
-              <a class="dropdown-item" value="Dragon" href="#">Dragon</a>
-            </div>
-            <!--NAVBAR DEBILIDAD-->
+              Seleccionar según: <br>
+            <select class="nav-link dropdown-toggle" href="#" role="button" id="type">
+              <option value="" selected href="#">TIPO</option>
+              <option value="Grass" href="#">Grass/Planta</option>
+              <option value="Poison" href="#">Grass/Planta</option>
+              <option value="Fire" href="#">Fire/Fuego</option>
+              <option value="Flying" href="#">Flying/Volador</option>
+              <option value="Water" href="#">Water/Agua</option>
+              <option value="Bug" href="#">Bug/Insecto</option>
+              <option value="Normal" href="#">Normal/Normal</option>
+              <option value="Electric" href="#">Electric/Eléctrico</option>
+              <option value="Ground" href="#">Ground/Tierra</option>
+              <option value="Fighting" href="#">Fighting/Lucha</option>
+              <option value="Psychic" href="#">Psychic/Psiquíco</option>
+              <option value="Rock" href="#">Rock/Roca</option>
+              <option value="Ice" href="#">Ice/Hielo</option>
+              <option value="Ghost" href="#">Ghost/Fantasma</option>
+              <option value="Dragon" href="#">Dragon/Dragon</option>
+            </select>
+          </li>
+          <!--NAVBAR DEBILIDAD-->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              DEBILIDAD
-            </a>
-            <div class="dropdown-menu" id="weaknesses" onchange="buttonWeaknesses()"
-              aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" value="Grass" href="#">Grass</a>
-              <a class="dropdown-item" value="Poison" href="#">Poison</a>
-              <a class="dropdown-item" value="Fire" href="#">Fire</a>
-              <a class="dropdown-item" value="Flying" href="#">Flying</a>
-              <a class="dropdown-item" value="Water" href="#">Water</a>
-              <a class="dropdown-item" value="Bug" href="#">Bug</a>
-              <a class="dropdown-item" value="Electric" href="#">Electric</a>
-              <a class="dropdown-item" value="Ground" href="#">Ground</a>
-              <a class="dropdown-item" value="Fighting" href="#">Fighting</a>
-              <a class="dropdown-item" value="Psychic" href="#">Psychic</a>
-              <a class="dropdown-item" value="Rock" href="#">Rock</a>
-              <a class="dropdown-item" value="Ice" href="#">Ice</a>
-              <a class="dropdown-item" value="Ghost" href="#">Ghost</a>
-              <a class="dropdown-item" value="Dragon" href="#">Dragon</a>
-              <a class="dropdown-item" value="Fairy" href="#">Fairy</a>
-              <a class="dropdown-item" value="Dark" href="#">Dark</a>
-              <a class="dropdown-item" value="Steel" href="#">Steel</a>
-            </div>
+              Seleccionar según: <br>
+            <select class="nav-link dropdown-toggle" href="#" role="button" id="weaknesses">
+              <option value="" selected href="#">DEBILIDAD</option>
+              <option value="Grass" href="#">Grass/Planta</option>
+              <option value="Poison" href="#">Grass/Planta</option>
+              <option value="Fire" href="#">Fire/Fuego</option>
+              <option value="Flying" href="#">Flying/Volador</option>
+              <option value="Water" href="#">Water/Agua</option>
+              <option value="Bug" href="#">Bug/Insecto</option>
+              <option value="Normal" href="#">Normal/Normal</option>
+              <option value="Electric" href="#">Electric/Eléctrico</option>
+              <option value="Ground" href="#">Ground/Tierra</option>
+              <option value="Fighting" href="#">Fighting/Lucha</option>
+              <option value="Psychic" href="#">Psychic/Psiquíco</option>
+              <option value="Rock" href="#">Rock/Roca</option>
+              <option value="Ice" href="#">Ice/Hielo</option>
+              <option value="Ghost" href="#">Ghost/Fantasma</option>
+              <option value="Dragon" href="#">Dragon/Dragon</option>
+              <option value="Fairy" href="#">Fairy/Hada</option>
+              <option value="Dark" href="#">Dark/Siniestro</option>
+              <option value="Steel" href="#">Steel/Acero</option>
+            </select>
           </li>
         </ul>
       </div>
     </nav>
+    <div id="root"></div>
+    <!--ESPACIO PARA RELLENAR CON EL CÓDIGO BONITO-->
+  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
