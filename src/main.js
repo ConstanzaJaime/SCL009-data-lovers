@@ -42,7 +42,7 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
             <select class="nav-link dropdown-toggle" href="#" role="button" id="type">
               <option value="" selected href="#">TIPO</option>
               <option value="Grass" href="#">Grass/Planta</option>
-              <option value="Poison" href="#">Poison/veneno</option>
+              <option value="Poison" href="#">Poison/Veneno</option>
               <option value="Fire" href="#">Fire/Fuego</option>
               <option value="Flying" href="#">Flying/Volador</option>
               <option value="Water" href="#">Water/Agua</option>
@@ -64,12 +64,11 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
             <select class="nav-link dropdown-toggle" href="#" role="button" id="weaknesses">
               <option value="" selected href="#">DEBILIDAD</option>
               <option value="Grass" href="#">Grass/Planta</option>
-              <option value="Poison" href="#">Grass/Planta</option>
+              <option value="Poison" href="#">Poison/Veneno</option>
               <option value="Fire" href="#">Fire/Fuego</option>
               <option value="Flying" href="#">Flying/Volador</option>
               <option value="Water" href="#">Water/Agua</option>
               <option value="Bug" href="#">Bug/Insecto</option>
-              <option value="Normal" href="#">Normal/Normal</option>
               <option value="Electric" href="#">Electric/Eléctrico</option>
               <option value="Ground" href="#">Ground/Tierra</option>
               <option value="Fighting" href="#">Fighting/Lucha</option>
@@ -92,7 +91,7 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
     </section>
     `;
 
-  let showAllPokemon = data.forEach(element =>{
+  data.forEach(element =>{
     document.getElementById("show-data").innerHTML +=
     ` 
     <div class="cards-container">
@@ -103,10 +102,21 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
       </div>
       `
   });
-  
+
 //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
 document.getElementById("showAllPokemon").addEventListener("click", () => {
-  document.getElementById("show-data").innerHTML = `${showAllPokemon}`;
+  document.getElementById("show-data").innerHTML = "";
+  data.forEach(element =>{
+    document.getElementById("show-data").innerHTML +=
+    ` 
+    <div class="cards-container">
+          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title">${element.name}</h5>
+          </div> 
+      </div>
+      `
+  });
 })
 
 //MUESTRA LOS POKEMON SEGUN TIPO
@@ -141,24 +151,6 @@ document.getElementById("weaknesses").addEventListener("change", () => {
   }); 
 });
 });
-
-// //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
-// document.getElementById("showAllPokemon").addEventListener("click", () => {
-//   document.getElementById("show-data").innerHTML = "";
-//   //Muestra todas las tarjetas con imagen y nombre
-//   data.forEach(element =>{
-//     document.getElementById("show-data").innerHTML +=
-//     ` <div class="cards-container">
-//           <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
-//           <h5 class="card-title">${element.name}</h5>
-//           </div> 
-//       </div>`
-//   });
-// });
-
-
-
 
 //})
 //MODAL
