@@ -11,14 +11,15 @@ let home = document.getElementById("root").innerHTML =
 `;
 
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
-const enterPage = document.getElementById("enter_page").addEventListener("click", () => {
+// const enterPage = 
+document.getElementById("enter_page").addEventListener("click", () => {
   document.getElementById("root").innerHTML = 
   `
   <!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
   <div id="screen2">
     <!-- Header -->
     <header class="col-12">
-      <img src="img/logo-pokemon.png" alt="Logo de la página">
+      <img id="go-home" src="img/logo-pokemon.png" alt="Logo de la página">
     </header>
 
     <!--NAVBAR INICIO-->
@@ -150,6 +151,11 @@ document.getElementById("weaknesses").addEventListener("change", () => {
         </div>`  
   }); 
 });
+
+document.getElementById("go-home").addEventListener("click", () => {
+  document.getElementById("root").innerHTML=`${home}`;
+})
+
 });
 
 //})
@@ -190,3 +196,5 @@ debilidadDePokemon17= ["Grass","Poison","Fire","Flying","Water","Bug", //NORMAL
 "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon",
 "Fairy","Dark","Steel"] 
 */
+
+// Para usar bootstrap tagName y atribute;
