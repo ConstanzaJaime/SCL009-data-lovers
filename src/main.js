@@ -92,7 +92,7 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
     </section>
     `;
 
-  data.forEach(element =>{
+  let showAllPokemon = data.forEach(element =>{
     document.getElementById("show-data").innerHTML +=
     ` 
     <div class="cards-container">
@@ -103,22 +103,11 @@ const enterPage = document.getElementById("enter_page").addEventListener("click"
       </div>
       `
   });
-});
-
+  
 //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
 document.getElementById("showAllPokemon").addEventListener("click", () => {
-  document.getElementById("show-data").innerHTML = "";
-  //Muestra todas las tarjetas con imagen y nombre
-  data.forEach(element =>{
-    document.getElementById("show-data").innerHTML +=
-    ` <div class="cards-container">
-          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-          <img src="${element.img}" class="card-img-top" alt="${element.name}">
-          <h5 class="card-title">${element.name}</h5>
-          </div> 
-      </div>`
-  });
-});
+  document.getElementById("show-data").innerHTML = `${showAllPokemon}`;
+})
 
 //MUESTRA LOS POKEMON SEGUN TIPO
 document.getElementById("type").addEventListener("change", () => {
@@ -151,6 +140,25 @@ document.getElementById("weaknesses").addEventListener("change", () => {
         </div>`  
   }); 
 });
+});
+
+// //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
+// document.getElementById("showAllPokemon").addEventListener("click", () => {
+//   document.getElementById("show-data").innerHTML = "";
+//   //Muestra todas las tarjetas con imagen y nombre
+//   data.forEach(element =>{
+//     document.getElementById("show-data").innerHTML +=
+//     ` <div class="cards-container">
+//           <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
+//           <h5 class="card-title">${element.name}</h5>
+//           </div> 
+//       </div>`
+//   });
+// });
+
+
+
 
 //})
 //MODAL
