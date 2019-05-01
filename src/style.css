@@ -18,10 +18,25 @@ header{
   background-color: #e7ff8c;
 }
 
+.go-home{
+margin-left: 2%;
+}
+
+.nav-item{
+  text-align: center;
+}
+
+.navbar-text{
+  margin-top: 1.2%; 
+}
+
 .nav-link{
   padding: 0%;
-  margin-left: 0.6em; 
+  margin-right: 0.6em;
+  margin-top: 10%; 
+
 }
+
   .card{
     float: left;
     border-radius: 0.5em;
