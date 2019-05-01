@@ -8,8 +8,8 @@ body{
 }
 
 header{
-
-  opacity: 0.5;
+  width: 100%;
+  opacity: 0.8;
   background-color: #0d47a1;
 }  
   
@@ -108,9 +108,9 @@ margin-left: 2%;
   overflow-y: scroll;
   height: 200px;
 }
-
+/* 
 @media screen and (max-width: 800px){
-    /* header {
+    header {
     
       background-color: #b2ff59;
       }
