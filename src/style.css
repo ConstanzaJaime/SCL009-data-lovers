@@ -37,17 +37,21 @@ margin-left: 2%;
 
 }
 
-  .card{
-    float: left;
-    border-radius: 0.5em;
-    margin: 0.2em;
-    background: linear-gradient(to bottom,rgba(100,181,246,.8), #b2ff59);
-    border-color: #64b5f6;
-  }
-  
-  .card-title{ 
-    text-align: center;
-  }
+.card{
+  /* float: left; */
+  background: linear-gradient(to bottom,rgba(100,181,246,.8), #b2ff59);
+  border-radius: 0.5em;
+  margin: 0.2em;
+  border-color: #64b5f6;
+}
+
+.card-title{ 
+  text-align: center;
+}
+
+#show-data{
+  background-color:rgba(0,0,0,0.5);
+}
 
 .big-logo{
     margin: 5% 22% 2% 22%;
