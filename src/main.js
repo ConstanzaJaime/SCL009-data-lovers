@@ -19,12 +19,12 @@ document.getElementById("enter_page").addEventListener("click", () => {
   <div id="screen2">
     <!-- Header -->
     <header class="col-12">
-      <img id="go-home" src="img/logo-pokemon.png" alt="Logo de la página">
+    <img class="go-home" src="img/logo-pokemon.png" alt="Logo de la página"/>
     </header>
 
     <!--NAVBAR INICIO-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inicio</a>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand go-home">Inicio</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,7 +87,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
       </div>
     </nav>
     
-    <section id="show-data">
+    <section class="row" id="show-data">
     
     </section>
     `;
@@ -96,14 +96,14 @@ document.getElementById("enter_page").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML +=
     ` 
     <div class="cards-container">
-          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+          <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title">${element.name}</h5>
           </div> 
       </div>
       `
   });
-
+  
 //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
 document.getElementById("showAllPokemon").addEventListener("click", () => {
   document.getElementById("show-data").innerHTML = "";
@@ -111,7 +111,7 @@ document.getElementById("showAllPokemon").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML +=
     ` 
     <div class="cards-container">
-          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+          <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title">${element.name}</h5>
           </div> 
@@ -128,7 +128,7 @@ document.getElementById("type").addEventListener("change", () => {
   type.forEach(element => {
     document.getElementById("show-data").innerHTML +=
       ` <div class="cards-container">
-            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+            <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
             <img src="${element.img}" class="card-img-top" alt="${element.name}">
             <h5 class="card-title">${element.name}</h5>
             </div> 
@@ -144,7 +144,7 @@ document.getElementById("weaknesses").addEventListener("change", () => {
   weak.forEach(element => {
     document.getElementById("show-data").innerHTML +=
       ` <div class="cards-container">
-            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+            <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
             <img src="${element.img}" class="card-img-top" alt="${element.name}">
             <h5 class="card-title">${element.name}</h5>
             </div> 
@@ -152,39 +152,24 @@ document.getElementById("weaknesses").addEventListener("change", () => {
   }); 
 });
 
-document.getElementById("go-home").addEventListener("click", () => {
-  document.getElementById("root").innerHTML=`${home}`;
-})
-
 });
 
-//})
-//MODAL
-/*
-`<section>
-<!-- Modal -->
-<div id="myModal" class="modal">
-  <!-- Contenido del modal -->
-  <div class="modal-content">
-    <span id="close">&times;</span>
-    <img src="${(data[i].img)}" alt="Imagen del pokemon">
-    <h5></h5>
-    <p></p>
-  </div>
-</div>
-</section>`
- Eventos del modal
-document.getElementById("each-card").addEventListener("click", () => {
-    document.getElementById("myModal").style.display="block";
-})
+document.getElementsByClassName("go-home").addEventListener("click", () => {
+  document.getElementById("root").innerHTML+=`${home}`;
+});
 
-document.getElementById("close").addEventListener("click", () => {
-    document.getElementById("myModal").style.display = "none";
-})
-// cierra el modal al clickear fuera
-document.getElementById("myModal").addEventListener("click", () => {
-    document.getElementById("myModal").style.display = "none";
-}); */
+// EVENTOS DEL MODAL
+// document.getElementById("each-card").addEventListener("click", () => {
+//     document.getElementById("myModal").style.display="block";
+// })
+
+// document.getElementById("close").addEventListener("click", () => {
+//     document.getElementById("myModal").style.display = "none";
+// })
+// // cierra el modal al clickear fuera
+// document.getElementById("myModal").addEventListener("click", () => {
+//     document.getElementById("myModal").style.display = "none";
+// }); 
 
 
 /*
