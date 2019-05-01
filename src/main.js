@@ -23,8 +23,8 @@ document.getElementById("enter_page").addEventListener("click", () => {
     </header>
 
     <!--NAVBAR INICIO-->
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand go-home">Inicio</a>
+    <nav class="navbar navbar-expand-lg row">
+      <a class="navbar-brand go-home"><strong>Inicio</strong></a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,12 +34,11 @@ document.getElementById("enter_page").addEventListener("click", () => {
         <ul class="navbar-nav mr-auto">
           <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
           <li class="nav-item active">
-            <a class="nav-link" id="showAllPokemon" href="#">Ver todos los pokemon<span
-                class="sr-only">(current)</span></a>
+            <a class="col nav-link" id="showAllPokemon" href="#"><strong>Ver todos <br> los pokemon</strong><span class="sr-only">(current)</span></a>
           </li>
           <!--NAVBAR TIPO-->
-          <li class="nav-item dropdown">
-              Seleccionar según: <br>
+            <p class="navbar-text col">Seleccionar según:</p>
+          <li class="nav-item dropdown col">
             <select class="nav-link dropdown-toggle" href="#" role="button" id="type">
               <option value="" selected href="#">TIPO</option>
               <option value="Grass" href="#">Grass/Planta</option>
@@ -61,8 +60,8 @@ document.getElementById("enter_page").addEventListener("click", () => {
           </li>
           <!--NAVBAR DEBILIDAD-->
           <li class="nav-item dropdown">
-              Seleccionar según: <br>
-            <select class="nav-link dropdown-toggle" href="#" role="button" id="weaknesses">
+             
+            <select class="nav-link dropdown-toggle col" href="#" role="button" id="weaknesses">
               <option value="" selected href="#">DEBILIDAD</option>
               <option value="Grass" href="#">Grass/Planta</option>
               <option value="Poison" href="#">Poison/Veneno</option>
