@@ -6,8 +6,10 @@ window.onload
 //Primera pantalla (Home)
 let home = document.getElementById("root").innerHTML =
 `
-<img class="big-logo" src="img/PokemonGoLogo.png" alt="Logo Pokemon">
-<button id="enter_page">Comenzar</button>
+<div class="row">
+  <img class="big-logo col" src="img/PokemonGoLogo.png" alt="Logo Pokemon">
+  <button id="enter_page" class="col">Comenzar</button>
+</div>
 `;
 
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
