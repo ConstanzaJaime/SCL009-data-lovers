@@ -17,3 +17,6 @@ const filterWeak = (data,condition) => {
 return result;
 };
 window.filterWeak = filterWeak;
+
+
+// Para llamar en funciones window.data.NombreDelFiltro
