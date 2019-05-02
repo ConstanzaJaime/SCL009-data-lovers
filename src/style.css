@@ -1,72 +1,44 @@
 /* --- Responsive --- */
 body{
   width: 100%;
-  background: linear-gradient(180deg, #21AC95 0%, rgba(255, 255, 255, 0) 20%), #77A54B;
-  background-image: url(img/background.jpg); 
-  max-width: 100%; 
-  height: auto;
- cursor: url(cursor/Pokeball_normal_select.cur), pointer; 
+  height: 800px;
+  background: linear-gradient(180deg, #21AC95 0%, rgba(255, 255, 255, 0) 100%), #77A54B;
 }
 
 header{
-  width: 100%;
-  opacity: 0.8;
+  height: 80px;
+  opacity: 0.5;
   background-color: #0d47a1;
 }  
   
-.navbar{
-  object-fit: contain;
-  background-color: #e7ff8c;
-}
+  .card{
+    float: left;
+    border-radius: 5px;
+    margin: 5px;
+    background: linear-gradient(to bottom,rgba(100,181,246,.8), #b2ff59);
+    border-color: #64b5f6;
+  }
+  
+  .card-title{ 
+    text-align: center;
+  }
 
-.go-home{
-margin-left: 2%;
-}
-
-.nav-item{
-  text-align: center;
-}
-
-.navbar-text{
-  margin-top: 1.2%; 
-}
-
-.nav-link{
-  padding: 0%;
-  margin-right: 0.6em;
-  margin-top: 10%; 
-
-}
-
-.card{
-  /* float: left; */
-  background: linear-gradient(to bottom,rgba(100,181,246,.8), #b2ff59);
-  border-radius: 0.5em;
-  margin: 0.2em;
-  border-color: #64b5f6;
-}
-
-.card-title{ 
-  text-align: center;
-}
-
-#show-data{
-  background-color:rgba(0,0,0,0.5);
-  text-align: center;
+#to-home{
+    width: 250px;
+    height: 80px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .big-logo{
     margin: 5% 22% 2% 22%;
-    width: 100%;
 }
 
 #enter_page{
-    margin: 0% 32% 5% 34%;
-    text-align: center;
-    padding: 0.3% 7%;
-    opacity: 0.8;
-    border-radius: 0.3em;
-    box-shadow: 0 0.4em 0.4em 0 rgba(0, 0, 0, 0.25);
+    margin: 0% 32% 5% 32%;
+    padding: 3px 80px;
+    opacity: 0.5;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background-color: #0d47a1;
     font-family: Roboto;
     font-size: 48px;
@@ -116,10 +88,16 @@ margin-left: 2%;
   overflow-y: scroll;
   height: 200px;
 }
-/* 
-@media screen and (max-width: 800px){
-    header {
-    
-      background-color: #b2ff59;
-      }
-  } */
+
+@media (min-width: 576px) { 
+  body{
+    background-image: url(img/background.jpg);
+    background-size: 100%;
+  }
+  
+  header {
+    width: 100%;
+    height: 71px;
+    background-color: #b2ff59;
+    }
+}

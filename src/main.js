@@ -18,12 +18,12 @@ document.getElementById("enter_page").addEventListener("click", () => {
   <div id="screen2">
     <!-- Header -->
     <header class="col-12">
-    <img class="go-home" src="img/logo-pokemon.png" alt="Logo de la página"/>
+      <img src="img/logo-pokemon.png" alt="Logo de la página">
     </header>
 
     <!--NAVBAR INICIO-->
-    <nav class="navbar navbar-expand-lg row">
-      <a class="navbar-brand go-home"><strong>Inicio</strong></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Inicio</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,11 +33,12 @@ document.getElementById("enter_page").addEventListener("click", () => {
         <ul class="navbar-nav mr-auto">
           <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
           <li class="nav-item active">
-            <a class="col nav-link" id="showAllPokemon" href="#"><strong>Ver todos <br> los pokemon</strong><span class="sr-only">(current)</span></a>
+            <a class="nav-link" id="showAllPokemon" href="#">Ver todos los pokemon<span
+                class="sr-only">(current)</span></a>
           </li>
           <!--NAVBAR TIPO-->
-            <p class="navbar-text col">Seleccionar según:</p>
-          <li class="nav-item dropdown col">
+          <li class="nav-item dropdown">
+              Seleccionar según: <br>
             <select class="nav-link dropdown-toggle" href="#" role="button" id="type">
               <option value="" selected href="#">TIPO</option>
               <option value="Grass" href="#">Grass/Planta</option>
@@ -85,7 +86,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
       </div>
     </nav>
     
-    <section class="row" id="show-data">
+    <section id="show-data">
     
     </section>
     `
@@ -94,11 +95,12 @@ document.getElementById("enter_page").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML +=
       `<div class="cards-container" id="eachCard">
           <div  class="card col-sm-2 col-6" style="width: 18rem;">
-
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title">${element.name}</h5>
           </div> 
       </div>
+      `
+  });
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
@@ -109,7 +111,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
       document.getElementById("show-data").innerHTML +=
         ` 
     <div class="cards-container">
-          <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
+          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title">${element.name}</h5>
           </div> 
@@ -151,6 +153,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
         </div>`
     });
   });
+});
 
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
