@@ -62,8 +62,8 @@ document.getElementById("enter_page").addEventListener("click", () => {
           </li>
           <!--NAVBAR DEBILIDAD-->
           <li class="nav-item dropdown">
-             
-            <select class="nav-link dropdown-toggle col" href="#" role="button" id="weaknesses">
+              <br>
+            <select class="nav-link dropdown-toggle" href="#" role="button" id="weaknesses">
               <option value="" selected href="#">DEBILIDAD</option>
               <option value="Grass" href="#">Grass/Planta</option>
               <option value="Poison" href="#">Poison/Veneno</option>
@@ -91,7 +91,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
     <section class="row" id="show-data">
     
     </section>
-    `;
+    `
 
   data.forEach(element =>{
     document.getElementById("show-data").innerHTML +=
@@ -119,13 +119,13 @@ document.getElementById("showAllPokemon").addEventListener("click", () => {
       </div>
       `
     });
-  })
+  });
 
   //MUESTRA LOS POKEMON SEGUN TIPO
   document.getElementById("type").addEventListener("change", () => {
     let selectValue = document.getElementById("type").value;
     let type = window.filterType(data, selectValue);
-    document.getElementById("weaknesses").value =""; //Limpia búsqueda por debilidad
+    document.getElementById("weaknesses").value = ""; //Limpia búsqueda por debilidad
     document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
     type.forEach(element => {
       document.getElementById("show-data").innerHTML +=
@@ -142,7 +142,7 @@ document.getElementById("showAllPokemon").addEventListener("click", () => {
   document.getElementById("weaknesses").addEventListener("change", () => {
     let selectValue = document.getElementById("weaknesses").value;
     let weak = window.filterWeak(data, selectValue);
-    document.getElementById("type").value =""; //Limpia búsqueda por tipo
+    document.getElementById("type").value = ""; //Limpia búsqueda por tipo
     document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
     weak.forEach(element => {
       document.getElementById("show-data").innerHTML +=
@@ -196,8 +196,6 @@ document.getElementById("showAllPokemon").addEventListener("click", () => {
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
-
-
 // debilidadDePokemon17= ["Grass","Poison","Fire","Flying","Water","Bug", //NORMAL
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon",
 // "Fairy","Dark","Steel"] ;
