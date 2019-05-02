@@ -7,18 +7,17 @@ window.onload
 let home = document.getElementById("root").innerHTML =
   `
 <img class="big-logo" src="img/PokemonGoLogo.png" alt="Logo Pokemon">
-<button id="enter_page">Comenzar</button>
+<button id="enterButton">Comenzar</button>
 `;
 
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
-document.getElementById("enter_page").addEventListener("click", () => {
+document.getElementById("enterButton").addEventListener("click", () => {
   document.getElementById("root").innerHTML =
-    `
-  <!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
+  `<!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
   <div id="screen2">
     <!-- Header -->
     <header class="col-12">
-      <img src="img/logo-pokemon.png" alt="Logo de la página">
+      <img src="img/logo-pokemon.png" class="headerImage" alt="Logo de la página">
     </header>
 
     <!--NAVBAR INICIO-->
@@ -93,13 +92,10 @@ document.getElementById("enter_page").addEventListener("click", () => {
 
   data.forEach(element => {
     document.getElementById("show-data").innerHTML +=
-      `<div class="cards-container" id="eachCard">
-          <div  class="card col-sm-2 col-6" style="width: 18rem;">
+      `<div class="cards-container col-sm-2 col-6" id="eachCard">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
-          <h5 class="card-title">${element.name}</h5>
-          </div> 
-      </div>
-      `
+          <h5 class="card-title"><strong>${element.name}</strong></h5>
+      </div>`
   });
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
@@ -109,14 +105,10 @@ document.getElementById("enter_page").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
     data.forEach(element => {
       document.getElementById("show-data").innerHTML +=
-        ` 
-    <div class="cards-container">
-          <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-          <img src="${element.img}" class="card-img-top" alt="${element.name}">
-          <h5 class="card-title">${element.name}</h5>
-          </div> 
-      </div>
-      `
+      `<div class="cards-container col-sm-2 col-6" id="eachCard">
+      <img src="${element.img}" class="card-img-top" alt="${element.name}">
+      <h5 class="card-title"><strong>${element.name}</strong></h5>
+  </div>`
     });
   });
 
@@ -128,12 +120,10 @@ document.getElementById("enter_page").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
     type.forEach(element => {
       document.getElementById("show-data").innerHTML +=
-        ` <div class="cards-container">
-            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title">${element.name}</h5>
-            </div> 
-        </div>`
+      `<div class="cards-container col-sm-2 col-6" id="eachCard">
+      <img src="${element.img}" class="card-img-top" alt="${element.name}">
+      <h5 class="card-title"><strong>${element.name}</strong></h5>
+  </div>`
     });
   });
 
@@ -145,12 +135,10 @@ document.getElementById("enter_page").addEventListener("click", () => {
     document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
     weak.forEach(element => {
       document.getElementById("show-data").innerHTML +=
-        ` <div class="cards-container">
-            <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title">${element.name}</h5>
-            </div> 
-        </div>`
+      `<div class="cards-container col-sm-2 col-6" id="eachCard">
+      <img src="${element.img}" class="card-img-top" alt="${element.name}">
+      <h5 class="card-title"><strong>${element.name}</strong></h5>
+  </div>`
     });
   });
 });
