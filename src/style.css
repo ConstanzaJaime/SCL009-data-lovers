@@ -5,7 +5,7 @@ body{
   background-image: url(img/background.jpg); 
   max-width: 100%; 
   height: auto;
- cursor: url(cursor/Pokeball_normal_select.cur), pointer; 
+ cursor: url(cursor/Pokeball_normal_select.cur), auto;
 }
 
 header{
@@ -17,6 +17,7 @@ header{
 .navbar{
   object-fit: contain;
   background-color: #e7ff8c;
+  padding: 0%;
 }
 
 .go-home{
@@ -35,7 +36,10 @@ margin-left: 2%;
   padding: 0%;
   margin-right: 0.6em;
   margin-top: 10%; 
+}
 
+#showAllPokemon{
+ margin-top: 5%;
 }
 
 .card{
