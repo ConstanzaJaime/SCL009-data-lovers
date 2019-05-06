@@ -21,7 +21,7 @@ document.getElementById("enter_page").addEventListener("click", () => {
   <div id="screen2">
     <!-- Header -->
     <header class="col-12">
-    <img class="go-home" src="img/logo-pokemon.png" alt="Logo de la página"/>
+    <img id="go-home-logo" src="img/logo-pokemon.png" alt="Logo de la página"/>
     </header>
 
     <!--NAVBAR INICIO-->
@@ -84,11 +84,28 @@ document.getElementById("enter_page").addEventListener("click", () => {
               <option value="Steel" href="#">Steel/Acero</option>
             </select>
           </li>
+
+          <li class="nav-item dropdown">
+          <select class="nav-link dropdown-toggle col" href="#" role="button" id="nameOrNum">
+            <option value="" selected href="#">Ordena</option>
+            <option value="name" href="#">Nombre</option>
+            <option value="num" href="#">Número</option>
+          </select>
+        </li>
+
+        <li>
+        <select class="nav-link dropdown-toggle col" href="#" role="button" id="order">
+          <option value="a-z"> A-Z </option>
+          <option value="z-a"> Z-A </option>
+          <option for="desc"> 1-151 </option>
+          <option for="asc"> 151-1 </option>
+         </select>
+        </li>
         </ul>
       </div>
     </nav>
     
-    <section class="row" id="show-data">
+    <section id="show-data">
     
     </section>
     `;
@@ -155,9 +172,28 @@ document.getElementById("weaknesses").addEventListener("change", () => {
 
 });
 
-document.getElementsByClassName("go-home").addEventListener("click", () => {
+document.getElementById("go-home-logo").addEventListener("click", () => {
   document.getElementById("root").innerHTML+=`${home}`;
 });
+
+// 
+// 87 - 103 LINEAS DONDE ESTÁ EL SELECT PARA QUE "FUNCIONE" EL ORDEN.
+// PARA PROBAR LA FUNCIÓN DE ORDEN AÚN NO TERMINADA.
+document.getElementById('order').addEventListener('change',() => {
+  //let orderBy = document.getElementById('nameOrNum').value;
+  let sortOrder = document.getElementById('order').value;
+  let dataOrder = window.orderPoke(data,sortBy,sortOrder);
+  document.getElementById("show-data").innerHTML = "";
+  dataOrder.forEach(element => {
+    document.getElementById("show-data").innerHTML +=
+      ` <div class="cards-container">
+            <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
+            <img src="${element.img}" class="card-img-top" alt="${element.name}">
+            <h5 class="card-title">${element.name}</h5>
+            </div> 
+        </div>`  
+    }); 
+  });
 
 // EVENTOS DEL MODAL
 // document.getElementById("each-card").addEventListener("click", () => {
