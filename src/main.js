@@ -77,6 +77,23 @@ document.getElementById("enterButton").addEventListener("click", () => {
               <option value="Steel" href="#">Steel/Acero</option>
             </select>
           </li>
+
+          <li class="nav-item dropdown">
+          <select class="nav-link dropdown-toggle col" href="#" role="button" id="nameOrNum">
+            <option value="" selected href="#">Ordena</option>
+            <option value="name" href="#">Nombre</option>
+            <option value="num" href="#">Número</option>
+          </select>
+        </li>
+
+        <li>
+        <select class="nav-link dropdown-toggle col" href="#" role="button" id="order">
+          <option value="a-z"> A-Z </option>
+          <option value="z-a"> Z-A </option>
+          <option for="desc"> 1-151 </option>
+          <option for="asc"> 151-1 </option>
+         </select>
+        </li>
         </ul>
       </div>
     </nav>
@@ -155,10 +172,113 @@ document.getElementById("enterButton").addEventListener("click", () => {
       </div>`
     });
   });
+
+  // 
+  // 81 - 96 select de orden.
+  // Evento para la función ordenar.
+  document.getElementById('order').addEventListener('change',() => {
+    //let orderBy = document.getElementById('nameOrNum').value;
+    let sortOrder = document.getElementById('order').value;
+    let dataOrder = window.orderPoke(data,sortBy,sortOrder);
+    document.getElementById("show-data").innerHTML = "";
+    dataOrder.forEach(element => {
+      document.getElementById("show-data").innerHTML +=
+        ` <div class="cards-container">
+              <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
+              <img src="${element.img}" class="card-img-top" alt="${element.name}">
+              <h5 class="card-title">${element.name}</h5>
+              </div> 
+          </div>`  
+      }); 
+    });
 });
+
+// DATAESCOGIDA.forEach(element => {
+//   document.getElementById("show-data").innerHTML +=
+//     ` <div class="cards-container" id="eachCard">
+//           <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
+//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
+//           <h5 class="card-title">${element.name}</h5>
+//           </div> 
+//       </div>`  
+
+// //MODAL
+// `<section>
+// <!-- Modal -->
+// <div id="myModal" class="modal">
+//   <!-- Contenido del modal -->
+//   <div class="modal-content">
+//     <span id="close">&times;</span>
+//     <img src="${(data[i].img)}" alt="Imagen del pokemon">
+//     <h5></h5>
+//     <p></p>
+//   </div>
+// </div>
+// </section>`
+
+// Para usar bootstrap tagName y atribute;
+
+//EVENTOS DEL MODAL
+
+
+// document.getElementById("close").addEventListener("click", () => {
+//     document.getElementById("myModal").style.display = "none";
+// })
+// // cierra el modal al clickear fuera
+// document.getElementById("myModal").addEventListener("click", () => {
+//     document.getElementById("myModal").style.display = "none";
+// }); 
+
+
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
 // debilidadDePokemon17= ["Grass","Poison","Fire","Flying","Water","Bug", //NORMAL
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon",
-// "Fairy","Dark","Steel"];
+// "Fairy","Dark","Steel"] ;
+
+
+
+
+
+// let modal="";
+//     let cards=""; 
+
+//     const pokePrint = (arr) => {
+//       printCards(arr);
+//       printModal(arr);
+//   };
+
+//   const pokeClean = (arr) => {
+//     modal="";
+//     cards=""; 
+//   };
+  
+
+//   const printCards= (arr) => {
+//     arr.forEach(element =>{
+//     cards +=`<div class="cards-container" id="eachCard">
+//           <div  class="card col-sm-2 col-6" style="width: 18rem;">
+//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
+//           <h5 class="card-title">${element.name}</h5>
+//           </div> 
+//       </div>
+//       `
+//   });
+//   document.getElementById("show-data").innerHTML =cards;
+// };
+//   const printModal = (arr) => {
+//     arr.forEach((element) => {
+//         modal +=  `<section>
+//     <div id="myModal" class="modal">
+//       <div class="modal-content col-2">
+//        <span id="close">&times;</span>
+//         <img src="${element.img}" alt="Imagen del pokemon">
+//         <h5></h5>
+//         <p>Hola, soy un modal</p>
+//       </div>
+//     </div>
+//     </section>` 
+//     })
+//     document.getElementById("show-data").innerHTML = modal;
+// };
