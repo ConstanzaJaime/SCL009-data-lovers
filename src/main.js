@@ -4,63 +4,59 @@ const data = Object.values(window.POKEMON.pokemon);
 window.onload
 
 //Primera pantalla (Home)
-let home = document.getElementById("root").innerHTML =
-  `
-<img class="big-logo" src="img/PokemonGoLogo.png" alt="Logo Pokemon">
-<button id="enterButton">Comenzar</button>
-`;
+document.getElementById("root").innerHTML =
+  `<div class="welcome-page col-">
+  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo col- col-sm-9 col-lg-6" alt="Logo Pokemon"></div><br><br><br>
+  <button id="enterButton" class="button">Comenzar</button>
+  </div>`;
 
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
 document.getElementById("enterButton").addEventListener("click", () => {
   document.getElementById("root").innerHTML =
-  `<!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
+    `<!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
   <div id="screen2">
-    <!-- Header -->
-    <header class="col-12">
-      <img src="img/logo-pokemon.png" class="headerImage" alt="Logo de la página">
-    </header>
-
     <!--NAVBAR INICIO-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Inicio</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <img src="img/logo-header.png" class="img-header col- col-lg-4 " alt="Logo de la página">
       <!--DIV CONTENEDOR NAVBAR-->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
           <li class="nav-item active">
-            <a class="nav-link" id="showAllPokemon" href="#">Ver todos los pokemon<span
-                class="sr-only">(current)</span></a>
+            <a class="nav-link button" id="showAllPokemon" href="#"><strong>Ver todos los pokemon</strong><span class="sr-only">(current)</span></a>
           </li>
           <!--NAVBAR TIPO-->
-          <li class="nav-item dropdown">
-              Seleccionar según: <br>
-            <select class="nav-link dropdown-toggle" href="#" role="button" id="type">
-              <option value="" selected href="#">TIPO</option>
-              <option value="Grass" href="#">Grass/Planta</option>
-              <option value="Poison" href="#">Poison/Veneno</option>
-              <option value="Fire" href="#">Fire/Fuego</option>
-              <option value="Flying" href="#">Flying/Volador</option>
-              <option value="Water" href="#">Water/Agua</option>
-              <option value="Bug" href="#">Bug/Insecto</option>
-              <option value="Normal" href="#">Normal/Normal</option>
-              <option value="Electric" href="#">Electric/Eléctrico</option>
-              <option value="Ground" href="#">Ground/Tierra</option>
-              <option value="Fighting" href="#">Fighting/Lucha</option>
-              <option value="Psychic" href="#">Psychic/Psiquíco</option>
-              <option value="Rock" href="#">Rock/Roca</option>
-              <option value="Ice" href="#">Ice/Hielo</option>
-              <option value="Ghost" href="#">Ghost/Fantasma</option>
-              <option value="Dragon" href="#">Dragon/Dragon</option>
+          Seleccionar según: <br>
+          <li class="nav-item dropdown" class="dropdown-menu">
+            <select class="nav-link dropdown-toggle" href="#" id="type" role="button" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false"  aria-labelledby="navbarDropdown">
+              <option class="dropdown-item" value="" selected href="#">TIPO</option>
+              <option class="dropdown-item" value="Grass" href="#">Grass/Planta</option>
+              <option class="dropdown-item" value="Poison" href="#">Poison/Veneno</option>
+              <option class="dropdown-item" value="Fire" href="#">Fire/Fuego</option>
+              <option class="dropdown-item" value="Flying" href="#">Flying/Volador</option>
+              <option class="dropdown-item" value="Water" href="#">Water/Agua</option>
+              <option class="dropdown-item" value="Bug" href="#">Bug/Insecto</option>
+              <option class="dropdown-item" value="Normal" href="#">Normal/Normal</option>
+              <option class="dropdown-item" value="Electric" href="#">Electric/Eléctrico</option>
+              <option class="dropdown-item" value="Ground" href="#">Ground/Tierra</option>
+              <option class="dropdown-item" value="Fighting" href="#">Fighting/Lucha</option>
+              <option class="dropdown-item" value="Psychic" href="#">Psychic/Psiquíco</option>
+              <option class="dropdown-item" value="Rock" href="#">Rock/Roca</option>
+              <option class="dropdown-item" value="Ice" href="#">Ice/Hielo</option>
+              <option class="dropdown-item" value="Ghost" href="#">Ghost/Fantasma</option>
+              <option class="dropdown-item" value="Dragon" href="#">Dragon/Dragon</option>
             </select>
           </li>
           <!--NAVBAR DEBILIDAD-->
-          <li class="nav-item dropdown">
-              <br>
-            <select class="nav-link dropdown-toggle" href="#" role="button" id="weaknesses">
+          <li class="nav-item dropdown" class="dropdown-menu">
+          <select class="nav-link dropdown-toggle" href="#" id="weaknesses" role="button" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown" >
               <option value="" selected href="#">DEBILIDAD</option>
               <option value="Grass" href="#">Grass/Planta</option>
               <option value="Poison" href="#">Poison/Veneno</option>
@@ -85,64 +81,81 @@ document.getElementById("enterButton").addEventListener("click", () => {
       </div>
     </nav>
     
-    <section id="show-data">
-    
+    <section class="cards-container" >
+    <div id="showData" class="row" ></div>
     </section>
     `
 
   data.forEach(element => {
-    document.getElementById("show-data").innerHTML +=
-      `<div class="cards-container col-sm-2 col-6" id="eachCard">
+    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
+      `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+      <div class="each-card" id="eachCard">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
+      </div>
       </div>`
   });
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
-    document.getElementById("weaknesses").value = ""; //Limpia búsqueda por debilidad
-    document.getElementById("type").value = ""; //Limpia búsqueda por tipo
-    document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
+    document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
+    document.getElementById("type").value = ""; //Limpia select por tipo
+    document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
     data.forEach(element => {
-      document.getElementById("show-data").innerHTML +=
-      `<div class="cards-container col-sm-2 col-6" id="eachCard">
-      <img src="${element.img}" class="card-img-top" alt="${element.name}">
-      <h5 class="card-title"><strong>${element.name}</strong></h5>
-  </div>`
+      document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
+        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+      <div class="each-card" id="eachCard">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title"><strong>${element.name}</strong></h5>
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
+      </div>
+      </div>`
     });
   });
 
   //MUESTRA LOS POKEMON SEGUN TIPO
   document.getElementById("type").addEventListener("change", () => {
-    let selectValue = document.getElementById("type").value;
-    let type = window.filterType(data, selectValue);
-    document.getElementById("weaknesses").value = ""; //Limpia búsqueda por debilidad
-    document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
+    let selectValue = document.getElementById("type").value; //Retorna valor seleccionado por el usuario
+    let type = window.filterType(data, selectValue); //Retorna objs de los pokemon del tipo seleccionado
+    let typeCounter = window.counterType(data, selectValue) //Retorna el n° de pokemon por tipo
+    document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
+    document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+    document.getElementById("showData").innerHTML = //Imprime n° de pokemon por tipo
+      `<div class="counter-text col-12">Existen ${typeCounter} pokemon tipo ${selectValue}</div>`
     type.forEach(element => {
-      document.getElementById("show-data").innerHTML +=
-      `<div class="cards-container col-sm-2 col-6" id="eachCard">
-      <img src="${element.img}" class="card-img-top" alt="${element.name}">
-      <h5 class="card-title"><strong>${element.name}</strong></h5>
-  </div>`
+      document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
+        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+      <div class="each-card" id="eachCard">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title"><strong>${element.name}</strong></h5>
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
+      </div>
+      </div>`
     });
   });
 
   //MUESTRA LOS POKEMON SEGUN DEBILIDAD 
   document.getElementById("weaknesses").addEventListener("change", () => {
-    let selectValue = document.getElementById("weaknesses").value;
-    let weak = window.filterWeak(data, selectValue);
-    document.getElementById("type").value = ""; //Limpia búsqueda por tipo
-    document.getElementById("show-data").innerHTML = ""; //Limpia tarjetas anteriores
+    let selectValue = document.getElementById("weaknesses").value; //Retorna valor seleccionado por el usuario
+    let weak = window.filterWeak(data, selectValue); //Retorna objs de los pokemon del tipo seleccionado
+    let weakCounter = window.counterWeak(data, selectValue) //Retorna el n° de pokemon por debilidad
+    document.getElementById("type").value = ""; //Limpia select por tipo
+    document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+    document.getElementById("showData").innerHTML = //Imprime n° de pokemon por debilidad
+      `<div class="counter-text col-12">Existen ${weakCounter} pokemon débiles al tipo ${selectValue}</div>`
     weak.forEach(element => {
-      document.getElementById("show-data").innerHTML +=
-      `<div class="cards-container col-sm-2 col-6" id="eachCard">
-      <img src="${element.img}" class="card-img-top" alt="${element.name}">
-      <h5 class="card-title"><strong>${element.name}</strong></h5>
-  </div>`
+      document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
+        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+      <div class="each-card" id="eachCard">
+          <img src="${element.img}" class="card-img-top" alt="${element.name}">
+          <h5 class="card-title"><strong>${element.name}</strong></h5>
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
+      </div>
+      </div>`
     });
   });
 });
-
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
