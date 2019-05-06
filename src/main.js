@@ -4,7 +4,7 @@ const data = Object.values(window.POKEMON.pokemon);
 window.onload
 
 //Primera pantalla (Home)
-document.getElementById("root").innerHTML =
+másdocument.getElementById("root").innerHTML =
   `<div class="welcome-page col-">
   <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo col- col-sm-9 col-lg-6" alt="Logo Pokemon"></div><br><br><br>
   <button id="enterButton" class="button">Comenzar</button>
