@@ -174,7 +174,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
   });
 
   // 
-  //
+  // 81 - 96 select de orden.
   // Evento para la función ordenar.
   document.getElementById('order').addEventListener('change',() => {
     //let orderBy = document.getElementById('nameOrNum').value;
