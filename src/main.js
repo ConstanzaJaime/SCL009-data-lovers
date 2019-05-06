@@ -106,7 +106,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
   data.forEach(element => {
     document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
       `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
-      <div class="each-card" id="eachCard">
+      <div class="each-card">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
           <h5 class="card-title"><strong>${element.num}</strong></h5>
@@ -122,7 +122,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     data.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
         `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
-      <div class="each-card" id="eachCard">
+      <div class="each-card">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
           <h5 class="card-title"><strong>${element.num}</strong></h5>
@@ -143,7 +143,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     type.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
         `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
-      <div class="each-card" id="eachCard">
+      <div class="each-card">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
           <h5 class="card-title"><strong>${element.num}</strong></h5>
@@ -164,7 +164,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     weak.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
         `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
-      <div class="each-card" id="eachCard">
+      <div class="each-card">
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
           <h5 class="card-title"><strong>${element.num}</strong></h5>
@@ -184,7 +184,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     dataOrder.forEach(element => {
       document.getElementById("show-data").innerHTML +=
         ` <div class="cards-container">
-              <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
+              <div class="card col-sm-6 col-md-12" style="width: 18rem;">
               <img src="${element.img}" class="card-img-top" alt="${element.name}">
               <h5 class="card-title">${element.name}</h5>
               </div> 
