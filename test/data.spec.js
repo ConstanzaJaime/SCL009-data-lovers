@@ -35,6 +35,13 @@ describe('filterType', () => {
       "type": "Poison", 
     "weaknesses": "Ice"}])
   });
+});
+
+describe('filterWeak', () => {
+  
+  it('debería ser una función', () => {
+    assert.equal(typeof filterType, 'function');
+  });
 
   it('debería retornar Array Geodude para "Water" ', () => {
     assert.deepEqual(window.filterWeak(POKEMON,'Water'), [{
@@ -42,5 +49,27 @@ describe('filterType', () => {
       "name": "Geodude",
       "type": "Rock",
       "weaknesses": "Water"}]);
+  });
 });
+
+describe('counterType', () => {
+  
+  it('debería ser una función', () => {
+    assert.equal(typeof counterType, 'function');
+  });
+
+  it('debería retornar 1 para "Grass" ', () => {
+    assert.deepEqual(window.counterType(POKEMON,'Grass'),1)
+  });
+});
+
+describe('counterWeak', () => {
+  
+  it('debería ser una función', () => {
+    assert.equal(typeof counterWeak, 'function');
+  });
+
+  it('debería retornar 1 para "Ice" ', () => {
+    assert.deepEqual(window.counterWeak(POKEMON,'Ice'),1)
+  });
 });

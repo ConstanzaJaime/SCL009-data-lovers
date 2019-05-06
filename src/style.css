@@ -1,125 +1,74 @@
 /* --- Responsive --- */
-body{
-  width: 100%;
-  background: linear-gradient(180deg, #21AC95 0%, rgba(255, 255, 255, 0) 20%), #77A54B;
-  background-image: url(img/background.jpg); 
-  max-width: 100%; 
-  height: auto;
- cursor: url(cursor/Pokeball_normal_select.cur), auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-header{
-  width: 100%;
-  opacity: 0.8;
-  background-color: #0d47a1;
-}  
-  
-.navbar{
-  object-fit: contain;
-  background-color: #e7ff8c;
-  padding: 0%;
+body {
+  text-align: center; 
+  height: 100vh;
+  background-attachment: fixed !important;
+  background: linear-gradient(to bottom, rgb(33, 172, 149), rgb(178, 255, 89,1));
 }
-
-.go-home{
-margin-left: 2%;
+.welcome-page{
+  position: relative;
+  top: 20vh ;
 }
-
-.nav-item{
+/*BOTON COMENZAR*/
+#enterButton{
+  font-family: 'Roboto', sans-serif;
+  color: rgb(255, 255, 255, .8);
+  background-color: rgb(13, 71, 161);
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 3px 7%; /*APLICAR MEDIDAS RESPONSIVE  ???  */
+  font-size: 48px; /*APLICAR MEDIDAS RESPONSIVE*/
+}
+/*----------------------TARJETAS---------------------------*/
+.cards-container{
+  align-content: center;
+  padding:2% 5%;
   text-align: center;
 }
-
-.navbar-text{
-  margin-top: 1.2%; 
+.cards { /*NO MODIFICAR ALTOS Y ANCHOS, eso va en bootstrap!!!*/
+  border-radius: 5px; 
+  padding: 1.5rem;
+  /* margin: .5em;  */
+  background: linear-gradient(to bottom, rgba(255,255,255,.4),rgba(13, 71, 161,.2));
+  border: 2px solid rgba(13, 71, 161);
 }
-
-.nav-link{
-  padding: 0%;
-  margin-right: 0.6em;
-  margin-top: 10%; 
+.counter-text{
+  font-size:30px;
+  padding: 0% 0% 2% 0%;
 }
-
-#showAllPokemon{
- margin-top: 5%;
+/*-----------------BARRA DE NAVEGACIÓN---------------------*/
+.navbar {
+  background: rgba(178, 255, 89, .8)!important;
 }
-
-.card{
-  /* float: left; */
-  background: linear-gradient(to bottom,rgba(100,181,246,.8), #b2ff59);
-  border-radius: 0.5em;
-  margin: 0.2em;
-  border-color: #64b5f6;
+.navbar-toggler{
+  background: rgba(13, 71, 161,.3);
 }
-
-.card-title{ 
-  text-align: center;
-}
-
-#show-data{
-  background-color:rgba(0,0,0,0.5);
-  text-align: center;
-}
-
-.big-logo{
-    margin: 5% 22% 2% 22%;
-    width: 100%;
-}
-
-#enter_page{
-    margin: 0% 32% 5% 34%;
-    text-align: center;
-    padding: 0.3% 7%;
-    opacity: 0.8;
-    border-radius: 0.3em;
-    box-shadow: 0 0.4em 0.4em 0 rgba(0, 0, 0, 0.25);
-    background-color: #0d47a1;
-    font-family: Roboto;
-    font-size: 48px;
-    color: #ffffff;
-}
-  
-  /* EL MODAL */
-  /* The Modal (background) */
-   .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  #close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  #close:hover,
-  #close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  } 
-
-.dropdown-menu{
+/*Menus desplegables tipo-debilidad-SIN FUNCIONAMIENTO POR AHORA!!!*/
+/* .dropdown-menu { 
   overflow-y: scroll;
-  height: 200px;
+  height: 200px; 
+} */
+/*-------------------------EXTRAS--------------------------*/
+/*CAMBIO DE CURSOR A POKEBOLA*/
+.button:hover{
+  cursor: url(cursor/Pokeball_normal_select.cur), pointer;
 }
+
+ /*background-image: url(img/background.jpg);*/
+/*.img-body{
+  width:100%;
+  height:auto;
+} */
+/*
+@media (min-width: 576px) {
+  body {
+    background-image: url(img/background.jpg);
+    background-size: 100%;
+  }
+}
+*/
 /* 
 @media screen and (max-width: 800px){
     header {
