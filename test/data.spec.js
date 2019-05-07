@@ -3,6 +3,7 @@ global.assert = require('chai').assert;
 require('../src/data');
 require('./data.spec.js');
 
+// DATA DE PRUEBA.
 const POKEMON = [{
     "num": "001",
     "name": "Bulbasaur",
@@ -22,6 +23,7 @@ const POKEMON = [{
   }
 ];
 
+// TEST FUNCIÓN DE FILTRO.
 describe('filterPoke', () => {
   
   it('debería ser una función', () => {
@@ -44,6 +46,7 @@ describe('filterPoke', () => {
   });
 });
 
+// TEST DE FUNCION DE CALCULO.
 describe('counter', () => {
   
   it('debería ser una función', () => {
@@ -58,6 +61,7 @@ describe('counter', () => {
   });
 });
 
+// TEST DE FUNCION DE ORDEN.
 describe('orderData', () => {
   
   it('debería ser una función', () => {
@@ -82,6 +86,25 @@ describe('orderData', () => {
       "type": "Poison",
       "weaknesses": "Ice"
     
+    }])
+  });
+  it('debería retornar arrays ordenados por nombre de a-z', () => {
+    assert.deepEqual(window.orderData(POKEMON,"name","asc"),[{
+      "num": "001",
+      "name": "Bulbasaur",
+      "type": "Poison",
+      "weaknesses": "Ice"
+    }, {
+      "num": "074",
+      "name": "Geodude",
+      "type": "Rock",
+      "weaknesses": "Water" 
+    }, {
+      "num": "003",
+      "name": "Venusaur",
+      "type": "Grass",
+      "weaknesses": 
+        "Fire"
     }])
   });
 });
