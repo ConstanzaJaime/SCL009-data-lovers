@@ -24,7 +24,7 @@ const counter = (data, condition, counterBy) => {
       return contador;
     }
   }, 0)
-  return result
+  return result;
 };
 window.counter = counter;
 
