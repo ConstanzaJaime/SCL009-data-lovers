@@ -99,7 +99,9 @@ document.getElementById("enterButton").addEventListener("click", () => {
     </nav>
     
     <section class="cards-container" >
-    <div id="showData" class="row" ></div>
+    <article id="showData" class="row" >
+    <div id="myModal"></div>
+    </article>
     </section>
     `
 
@@ -110,9 +112,28 @@ document.getElementById("enterButton").addEventListener("click", () => {
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
           <h5 class="card-title"><strong>${element.num}</strong></h5>
+          <a  class="btn btn-primary " data-toggle="modal" data-target="#modal${element.id}">
       </div>
       </div>`
   });
+
+  function modal (pokeModal){
+    pokeModal.forEach(element =>{
+      document.getElementById("myModal").innerHTML +=    
+    `<!-- Modal -->
+    <div id="modal${element.id}"" class="modal">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img src="${element.img}" alt="Imagen del pokemon">
+          <h5></h5>
+          <p></p>
+        </div> 
+      </div>`
+    });
+    };
+    
+    modal(data);
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
