@@ -99,34 +99,38 @@ document.getElementById("enterButton").addEventListener("click", () => {
     </nav>
     
     <section class="cards-container" >
+
+    <div id="myModal" class="row align-items-center"></div>
+
     <article id="showData" class="row" >
-    <div id="myModal"></div>
+ 
     </article>
     </section>
     `
 
   data.forEach(element => {
-    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
-      `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon //115 pongo el numero del pokemon.
+      `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card">
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
-          <h5 class="card-title"><strong>${element.num}</strong></h5>
-          <a  class="btn btn-primary " data-toggle="modal" data-target="#modal${element.id}">
       </div>
-      </div>`
+      </a>`
   });
 
   function modal (pokeModal){
     pokeModal.forEach(element =>{
       document.getElementById("myModal").innerHTML +=    
     `<!-- Modal -->
-    <div id="modal${element.id}"" class="modal">
+    <div id="modal${element.id}" class="modal col-4 offset-4">
         <!-- Contenido del modal -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <img src="${element.img}" alt="Imagen del pokemon">
-          <h5></h5>
+          <h4>${element.name}</h4>
+          <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
+            <p>${element.num}</p>
+            <p>${element.type}</p>
           <p></p>
         </div> 
       </div>`
