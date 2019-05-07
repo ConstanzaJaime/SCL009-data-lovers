@@ -76,9 +76,15 @@ body {
   margin-top: 5%;
   border-radius: 5%;
   list-style-type: none;
+  padding: 2% 8%;
+  text-align:center;
 }
 
 .modal p{
   text-align: left;
   margin-left: 5%;
 }
+/* 
+.modal img {
+
+} */

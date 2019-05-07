@@ -57,19 +57,19 @@ window.counterWeak = counterWeak;
   // }
   // window.orderPokeData = orderPokeData;
 
-  const orderPoke= (data, sortBy, sortOrder)=>{
-    let result;
-    if(sortOrder==="a-z"){
-      data.sort((a,b)=>{
-        return a[sortBy].localeCompare(b[sortBy]);
-      })
-    }
-      if(sortOrder==="z-a"){
-        data.sort((a,b)=>{
-          return a[sortBy].localeCompare(b[sortBy]);
-        })
+  // const orderPoke= (data, sortBy, sortOrder)=>{
+  //   let result;
+  //   if(sortOrder==="a-z"){
+  //     data.sort((a,b)=>{
+  //       return a[sortBy].localeCompare(b[sortBy]);
+  //     })
+  //   }
+  //     if(sortOrder==="z-a"){
+  //       data.sort((a,b)=>{
+  //         return a[sortBy].localeCompare(b[sortBy]);
+  //       })
       
-    };
-    return result
-  }
-  window.orderPoke = orderPoke;
+  //   }
+  //   return result
+  // }
+  // window.orderPoke = orderPoke;
