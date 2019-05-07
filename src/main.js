@@ -150,14 +150,13 @@ document.getElementById("enterButton").addEventListener("click", () => {
     document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
     data.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
-        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+        `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">
       <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
-        
       </div>
-      </div>`
+      </a>`
     });
   });
 
@@ -175,13 +174,13 @@ document.getElementById("enterButton").addEventListener("click", () => {
       `<div class="counter-text col-12">Existen ${typeCounter} pokemon tipo ${selectValue}</div>`
     type.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+        `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">
       <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
       </div>
-      </div>`
+      </a>`
     });
   });
 
@@ -199,13 +198,13 @@ document.getElementById("enterButton").addEventListener("click", () => {
       `<div class="counter-text col-12">Existen ${weakCounter} pokemon débiles al tipo ${selectValue}</div>`
     weak.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+        `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">
       <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
       </div>
-      </div>`
+      </a>`
     });
   });
 
@@ -227,13 +226,13 @@ document.getElementById("enterButton").addEventListener("click", () => {
     }
     orderSolution.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-        `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
+        `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">
       <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
       </div>
-      </div>`
+      </a>`
     });
   });
 });
