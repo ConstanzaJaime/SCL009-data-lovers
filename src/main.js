@@ -107,7 +107,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     </article>
     </section>
     `
-
+//TARJETAS DE POKEMON.
   data.forEach(element => {
     document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon //115 pongo el numero del pokemon.
       `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
@@ -119,15 +119,17 @@ document.getElementById("enterButton").addEventListener("click", () => {
       </a>`
   });
 
+  // MODAL QUE MUESTRA LA INFORMACIÓN DE CADA POKEMON.
   function modal (pokeModal){
     pokeModal.forEach(element =>{
       document.getElementById("myModal").innerHTML +=    
-    `<!-- Modal -->
+      ` <!-- Modal -->
     <div id="modal${element.id}" class="modal col-4 offset-4">
         <!-- Contenido del modal -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h4>${element.name}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
           <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
           <div class="modal-body">
           <ul>
@@ -138,9 +140,10 @@ document.getElementById("enterButton").addEventListener("click", () => {
         </div> 
       </div>`
     });
-    };
+    }
     
     modal(data);
+
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
@@ -159,11 +162,12 @@ document.getElementById("enterButton").addEventListener("click", () => {
     });
   });
 
+
   //MUESTRA LOS POKEMON SEGUN TIPO
   document.getElementById("type").addEventListener("change", () => {
     let selectValue = document.getElementById("type").value; //Retorna valor seleccionado por el usuario
     let type = window.filterType(data, selectValue); //Retorna objs de los pokemon del tipo seleccionado
-    let typeCounter = window.counterType(data, selectValue) //Retorna el n° de pokemon por tipo
+    let typeCounter = window.counterType(data, selectValue); //Retorna el n° de pokemon por tipo
     document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
     document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
     document.getElementById("showData").innerHTML = //Imprime n° de pokemon por tipo
@@ -184,7 +188,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
   document.getElementById("weaknesses").addEventListener("change", () => {
     let selectValue = document.getElementById("weaknesses").value; //Retorna valor seleccionado por el usuario
     let weak = window.filterWeak(data, selectValue); //Retorna objs de los pokemon del tipo seleccionado
-    let weakCounter = window.counterWeak(data, selectValue) //Retorna el n° de pokemon por debilidad
+    let weakCounter = window.counterWeak(data, selectValue); //Retorna el n° de pokemon por debilidad
     document.getElementById("type").value = ""; //Limpia select por tipo
     document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
     document.getElementById("showData").innerHTML = //Imprime n° de pokemon por debilidad
@@ -202,23 +206,23 @@ document.getElementById("enterButton").addEventListener("click", () => {
   });
 
   // 
-  // 81 - 96 select de orden.
-  // Evento para la función ordenar.
-  document.getElementById('order').addEventListener('change',() => {
-    //let orderBy = document.getElementById('nameOrNum').value;
-    let sortOrder = document.getElementById('order').value;
-    let dataOrder = window.orderPoke(data,sortBy,sortOrder);
-    document.getElementById("show-data").innerHTML = "";
-    dataOrder.forEach(element => {
-      document.getElementById("show-data").innerHTML +=
-        ` <div class="cards-container">
-              <div class="card col-sm-6 col-md-12" style="width: 18rem;">
-              <img src="${element.img}" class="card-img-top" alt="${element.name}">
-              <h5 class="card-title">${element.name}</h5>
-              </div> 
-          </div>`  
-      }); 
-    });
+//   // 81 - 96 select de orden.
+//   // Evento para la función ordenar.
+//   document.getElementById('order').addEventListener('change',() => {
+//     //let orderBy = document.getElementById('nameOrNum').value;
+//     let sortOrder = document.getElementById('order').value;
+//     let dataOrder = window.orderPoke(data,sortBy,sortOrder);
+//     document.getElementById("show-data").innerHTML = "";
+//     dataOrder.forEach(element => {
+//       document.getElementById("show-data").innerHTML +=
+//         ` <div class="cards-container">
+//               <div class="card col-sm-6 col-md-12" style="width: 18rem;">
+//               <img src="${element.img}" class="card-img-top" alt="${element.name}">
+//               <h5 class="card-title">${element.name}</h5>
+//               </div> 
+//           </div>`  
+//       }); 
+//     });
 });
 
 // DATAESCOGIDA.forEach(element => {
@@ -246,67 +250,9 @@ document.getElementById("enterButton").addEventListener("click", () => {
 
 // Para usar bootstrap tagName y atribute;
 
-//EVENTOS DEL MODAL
-
-
-// document.getElementById("close").addEventListener("click", () => {
-//     document.getElementById("myModal").style.display = "none";
-// })
-// // cierra el modal al clickear fuera
-// document.getElementById("myModal").addEventListener("click", () => {
-//     document.getElementById("myModal").style.display = "none";
-// }); 
-
-
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
 // debilidadDePokemon17= ["Grass","Poison","Fire","Flying","Water","Bug", //NORMAL
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon",
-// "Fairy","Dark","Steel"] ;
-
-
-
-
-
-// let modal="";
-//     let cards=""; 
-
-//     const pokePrint = (arr) => {
-//       printCards(arr);
-//       printModal(arr);
-//   };
-
-//   const pokeClean = (arr) => {
-//     modal="";
-//     cards=""; 
-//   };
-  
-
-//   const printCards= (arr) => {
-//     arr.forEach(element =>{
-//     cards +=`<div class="cards-container" id="eachCard">
-//           <div  class="card col-sm-2 col-6" style="width: 18rem;">
-//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
-//           <h5 class="card-title">${element.name}</h5>
-//           </div> 
-//       </div>
-//       `
-//   });
-//   document.getElementById("show-data").innerHTML =cards;
-// };
-//   const printModal = (arr) => {
-//     arr.forEach((element) => {
-//         modal +=  `<section>
-//     <div id="myModal" class="modal">
-//       <div class="modal-content col-2">
-//        <span id="close">&times;</span>
-//         <img src="${element.img}" alt="Imagen del pokemon">
-//         <h5></h5>
-//         <p>Hola, soy un modal</p>
-//       </div>
-//     </div>
-//     </section>` 
-//     })
-//     document.getElementById("show-data").innerHTML = modal;
-// };
+// "Fairy","Dark","Steel"];
