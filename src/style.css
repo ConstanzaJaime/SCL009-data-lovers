@@ -45,46 +45,28 @@ body {
 .navbar-toggler{
   background: rgba(13, 71, 161,.3);
 }
-/*Menus desplegables tipo-debilidad-SIN FUNCIONAMIENTO POR AHORA!!!*/
-/* .dropdown-menu { 
-  overflow-y: scroll;
-  height: 200px; 
-} */
+
 /*-------------------------EXTRAS--------------------------*/
 /*CAMBIO DE CURSOR A POKEBOLA*/
 .button:hover{
   cursor: url(cursor/Pokeball_normal_select.cur), pointer;
 }
 
-/* @media (min-width: 576px) {
-  body {
-    background-image: url(img/background.jpg);
-    background-size: 100%;
-  }
-} */
-
-/* 
-@media screen and (max-width: 800px){
-    header {
-    
-      background-color: #b2ff59;
-      }
-  } */
-
   /*-------------------------MODAL--------------------------*/
-.modal{
-  margin-top: 5%;
-  border-radius: 5%;
-  list-style-type: none;
-  padding: 2% 8%;
-  text-align:center;
+
+.modal-content{
+  padding: 2%;
+  background-color: rgba(34, 134, 195, 1);
 }
 
-.modal p{
+.modal-body{
+  background-color: white;
+  border-radius: 6%;
+  text-align: left;
+  color: rgb(34, 62, 104);
+}
+
+.modal ul{
   text-align: left;
   margin-left: 5%;
 }
-/* 
-.modal img {
-
-} */
