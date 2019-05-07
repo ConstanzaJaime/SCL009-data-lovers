@@ -129,9 +129,12 @@ document.getElementById("enterButton").addEventListener("click", () => {
           <span class="close">&times;</span>
           <h4>${element.name}</h4>
           <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
-            <p>${element.num}</p>
-            <p>${element.type}</p>
-          <p></p>
+          <div class="modal-body">
+          <ul>
+            <li>${element.num}</li>
+            <li>${element.type}</li>
+          </ul>
+          </div> 
         </div> 
       </div>`
     });
