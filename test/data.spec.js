@@ -22,29 +22,21 @@ const POKEMON = [{
   }
 ];
 
-describe('filterType', () => {
+describe('filterPoke', () => {
   
   it('debería ser una función', () => {
-    assert.equal(typeof filterType, 'function');
+    assert.equal(typeof filterPoke, 'function');
   });
 
   it('debería retornar Array Bulbasaur para "Poison" ', () => {
-    assert.deepEqual(window.filterType(POKEMON,'Poison'), [{
+    assert.deepEqual(window.filterPoke(POKEMON,"Poison","type"), [{
       "num": "001", 
       "name": "Bulbasaur", 
       "type": "Poison", 
     "weaknesses": "Ice"}])
   });
-});
-
-describe('filterWeak', () => {
-  
-  it('debería ser una función', () => {
-    assert.equal(typeof filterType, 'function');
-  });
-
   it('debería retornar Array Geodude para "Water" ', () => {
-    assert.deepEqual(window.filterWeak(POKEMON,'Water'), [{
+    assert.deepEqual(window.filterPoke(POKEMON,"Water","weaknesses"), [{
       "num": "074",
       "name": "Geodude",
       "type": "Rock",
@@ -52,24 +44,44 @@ describe('filterWeak', () => {
   });
 });
 
-describe('counterType', () => {
+describe('counter', () => {
   
   it('debería ser una función', () => {
-    assert.equal(typeof counterType, 'function');
+    assert.equal(typeof counter, 'function');
   });
 
   it('debería retornar 1 para "Grass" ', () => {
-    assert.deepEqual(window.counterType(POKEMON,'Grass'),1)
+    assert.deepEqual(window.counter(POKEMON,"Grass","type"),1)
+  });
+  it('debería retornar 1 para "Ice" ', () => {
+    assert.deepEqual(window.counter(POKEMON,"Ice","weaknesses"),1)
   });
 });
 
-describe('counterWeak', () => {
+describe('orderData', () => {
   
   it('debería ser una función', () => {
-    assert.equal(typeof counterWeak, 'function');
+    assert.equal(typeof orderData, 'function');
   });
 
-  it('debería retornar 1 para "Ice" ', () => {
-    assert.deepEqual(window.counterWeak(POKEMON,'Ice'),1)
+  it('debería retornar arrays ordenados por nombre de z-a', () => {
+    assert.deepEqual(window.orderData(POKEMON,"name","des"),[{
+      "num": "003",
+      "name": "Venusaur",
+      "type": "Grass",
+      "weaknesses": 
+        "Fire"
+    }, {
+      "num": "074",
+      "name": "Geodude",
+      "type": "Rock",
+      "weaknesses": "Water" 
+    }, {
+      "num": "001",
+      "name": "Bulbasaur",
+      "type": "Poison",
+      "weaknesses": "Ice"
+    
+    }])
   });
 });
