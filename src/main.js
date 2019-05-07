@@ -36,7 +36,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
         Seleccionar según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="type" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown">
+            aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown" style="overflow-y: scroll;">
             <option class="dropdown-item" value="" selected href="#">TIPO</option>
             <option class="dropdown-item" value="Grass" href="#">Grass/Planta</option>
             <option class="dropdown-item" value="Poison" href="#">Poison/Veneno</option>
@@ -58,7 +58,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
         <!--NAVBAR DEBILIDAD-->
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="weaknesses" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown">
+            aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown" style="overflow-y: scroll;">
             <option class="dropdown-item" value="" selected href="#">DEBILIDAD</option>
             <option class="dropdown-item" value="Grass" href="#">Grass/Planta</option>
             <option class="dropdown-item" value="Poison" href="#">Poison/Veneno</option>
@@ -97,10 +97,10 @@ document.getElementById("enterButton").addEventListener("click", () => {
     
     <section class="cards-container" >
 
-    <div id="myModal" class="row align-items-center"></div>
+    <div id="myModal" class="row align-items-center"> <!-- Aquí se imprime el modal --> </div>
 
     <article id="showData" class="row" >
- 
+        <!-- Aquí se imprimen las cartas de cada pokemon -->
     </article>
     </section>
     `

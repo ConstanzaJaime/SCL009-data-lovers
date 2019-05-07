@@ -41,6 +41,7 @@ body {
 /*-----------------BARRA DE NAVEGACIÓN---------------------*/
 .navbar {
   background: rgba(178, 255, 89, .8)!important;
+  object-fit: contain;
 }
 .navbar-toggler{
   background: rgba(13, 71, 161,.3);
@@ -48,7 +49,7 @@ body {
 
 /*-------------------------EXTRAS--------------------------*/
 /*CAMBIO DE CURSOR A POKEBOLA*/
-.button:hover{
+.button:hover, .nav-link:hover, .cards:hover{
   cursor: url(cursor/Pokeball_normal_select.cur), pointer;
 }
 
