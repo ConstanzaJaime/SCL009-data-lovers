@@ -127,7 +127,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
             <div class="modal-header">
             <img src="${element.img}" alt="Imagen del pokemon">
               <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
             </div>
@@ -146,24 +146,6 @@ document.getElementById("enterButton").addEventListener("click", () => {
       </div>`
     });
   }
-
-  // <!-- Modal -->
-  // <div id="modal${element.id}" class="modal col-4 offset-4">
-  //     <!-- Contenido del modal -->
-  //     <div class="modal-content">
-  //     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  //     <span aria-hidden="true">&times;</span>
-  //   </button>
-  //       <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
-  //       <div class="modal-body">
-  //       <ul>
-  //         <li>${element.num}</li>
-  //         <li>${element.type}</li>
-  //       </ul>
-  //       </div> 
-  //     </div> 
-  //   </div>
-
 
   modal(data);
 
@@ -265,43 +247,6 @@ document.getElementById("enterButton").addEventListener("click", () => {
     });
   });
 });
-
-
-// let ordered;
-// a.addEventListener('change', () => {
-//     document.getElementById('calculo-agregado').innerHTML = '';
-//     let option = a.value;
-//     if (option === 'AZ') {
-//         ordered = window.sortData(listaPokemones, 'name', 'asc');
-//     } else if (option === 'ZA') {
-//         ordered = window.sortData(listaPokemones, 'name', 'desc');
-//     } else if (option === 'NumUp') {
-//         ordered = window.sortData(listaPokemones, 'num', 'asc');
-//     } else if (option === 'NumDown') {
-//         ordered = window.sortData(listaPokemones, 'num', 'desc');
-//     }
-//     vaciar();
-//     imprimir(ordered);
-// }
-// 
-//   // 81 - 96 select de orden.
-//   // Evento para la función ordenar.
-//   document.getElementById("order").addEventListener("change", () => {
-//     //let orderBy = document.getElementById('nameOrNum').value;
-//     let sortOrder = document.getElementById('order').value;
-//     let dataOrder = window.orderPoke(data, sortBy, sortOrder);
-//     document.getElementById("show-data").innerHTML = "";
-//     dataOrder.forEach(element => {
-//       document.getElementById("show-data").innerHTML +=
-//         ` <div class="cards-container">
-//               <div id="each-card" class="card col-sm-6 col-md-12" style="width: 18rem;">
-//               <img src="${element.img}" class="card-img-top" alt="${element.name}">
-//               <h5 class="card-title">${element.name}</h5>
-//               </div> 
-//           </div>`
-//     });
-//   });
-// });
 
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
