@@ -120,24 +120,50 @@ document.getElementById("enterButton").addEventListener("click", () => {
   function modal (pokeModal){
     pokeModal.forEach(element =>{
       document.getElementById("myModal").innerHTML +=    
-      ` <!-- Modal -->
-    <div id="modal${element.id}" class="modal col-4 offset-4">
-        <!-- Contenido del modal -->
-        <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-          <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
-          <div class="modal-body">
-          <ul>
-            <li>${element.num}</li>
-            <li>${element.type}</li>
-          </ul>
-          </div> 
-        </div> 
+      `<!-- Modal -->
+      <div id="modal${element.id}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <img src="${element.img}" alt="Imagen del pokemon">
+              <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <dl>
+              <dt><strong>${element.num}</strong> </dt>
+                <dd></dd>
+              <dt><strong>Tipo</strong></dt>
+                <dd>${element.type}</dd>
+                <dt><strong>Debilidades</strong></dt>
+                <dd>${element.weaknesses}</dd>            
+              </dl>
+            </div>
+          </div>
+        </div>
       </div>`
     });
     }
+
+    // <!-- Modal -->
+    // <div id="modal${element.id}" class="modal col-4 offset-4">
+    //     <!-- Contenido del modal -->
+    //     <div class="modal-content">
+    //     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    //     <span aria-hidden="true">&times;</span>
+    //   </button>
+    //       <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
+    //       <div class="modal-body">
+    //       <ul>
+    //         <li>${element.num}</li>
+    //         <li>${element.type}</li>
+    //       </ul>
+    //       </div> 
+    //     </div> 
+    //   </div>
+
     
     modal(data);
 
