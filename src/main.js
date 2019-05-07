@@ -275,31 +275,6 @@ document.getElementById("enterButton").addEventListener("click", () => {
 //   });
 // });
 
-// DATAESCOGIDA.forEach(element => {
-//   document.getElementById("show-data").innerHTML +=
-//     ` <div class="cards-container" id="eachCard">
-//           <div id="each-card" class="card col-sm-2 col-6" style="width: 18rem;">
-//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
-//           <h5 class="card-title">${element.name}</h5>
-//           </div> 
-//       </div>`  
-
-// //MODAL
-// `<section>
-// <!-- Modal -->
-// <div id="myModal" class="modal">
-//   <!-- Contenido del modal -->
-//   <div class="modal-content">
-//     <span id="close">&times;</span>
-//     <img src="${(data[i].img)}" alt="Imagen del pokemon">
-//     <h5></h5>
-//     <p></p>
-//   </div>
-// </div>
-// </section>`
-
-// Para usar bootstrap tagName y atribute;
-
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
