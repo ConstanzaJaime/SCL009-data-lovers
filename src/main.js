@@ -96,20 +96,51 @@ document.getElementById("enterButton").addEventListener("click", () => {
 
     
     <section class="cards-container" >
-    <div id="showData" class="row" ></div>
+
+    <div id="myModal" class="row align-items-center"></div>
+
+    <article id="showData" class="row" >
+ 
+    </article>
     </section>
     `
-
+//TARJETAS DE POKEMON.
   data.forEach(element => {
-    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
-      `<div class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2"> 
-      <div class="each-card" id="eachCard">
+    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon //115 pongo el numero del pokemon.
+      `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
+      <div class="each-card">
+          <h5 class="card-title"><strong>${element.num}</strong></h5>
           <img src="${element.img}" class="card-img-top" alt="${element.name}">
           <h5 class="card-title"><strong>${element.name}</strong></h5>
-          <h5 class="card-title"><strong>${element.num}</strong></h5>
       </div>
-      </div>`
+      </a>`
   });
+
+  // MODAL QUE MUESTRA LA INFORMACIÓN DE CADA POKEMON.
+  function modal (pokeModal){
+    pokeModal.forEach(element =>{
+      document.getElementById("myModal").innerHTML +=    
+      ` <!-- Modal -->
+    <div id="modal${element.id}" class="modal col-4 offset-4">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+          <img src="${element.img}" class="card-img-top" alt="Imagen del pokemon">
+          <div class="modal-body">
+          <ul>
+            <li>${element.num}</li>
+            <li>${element.type}</li>
+          </ul>
+          </div> 
+        </div> 
+      </div>`
+    });
+    }
+    
+    modal(data);
+
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
@@ -129,6 +160,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
       </div>`
     });
   });
+
 
   //MUESTRA LOS POKEMON SEGUN TIPO
   document.getElementById("type").addEventListener("change", () => {
@@ -268,58 +300,9 @@ document.getElementById("enterButton").addEventListener("click", () => {
 
 // Para usar bootstrap tagName y atribute;
 
-//EVENTOS DEL MODAL
-
-
-// document.getElementById("close").addEventListener("click", () => {
-//     document.getElementById("myModal").style.display = "none";
-// })
-// // cierra el modal al clickear fuera
-// document.getElementById("myModal").addEventListener("click", () => {
-//     document.getElementById("myModal").style.display = "none";
-// }); 
-
-
 
 // tiposDePokemon15=["Grass","Poison","Fire","Flying","Water","Bug","Normal",
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"];
 // debilidadDePokemon17= ["Grass","Poison","Fire","Flying","Water","Bug", //NORMAL
 // "Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon",
-// "Fairy","Dark","Steel"] ;
-// let modal="";
-//     let cards=""; 
-//     const pokePrint = (arr) => {
-//       printCards(arr);
-//       printModal(arr);
-//   };
-//   const pokeClean = (arr) => {
-//     modal="";
-//     cards=""; 
-//   };
-//   const printCards= (arr) => {
-//     arr.forEach(element =>{
-//     cards +=`<div class="cards-container" id="eachCard">
-//           <div  class="card col-sm-2 col-6" style="width: 18rem;">
-//           <img src="${element.img}" class="card-img-top" alt="${element.name}">
-//           <h5 class="card-title">${element.name}</h5>
-//           </div> 
-//       </div>
-//       `
-//   });
-//   document.getElementById("show-data").innerHTML =cards;
-// };
-//   const printModal = (arr) => {
-//     arr.forEach((element) => {
-//         modal +=  `<section>
-//     <div id="myModal" class="modal">
-//       <div class="modal-content col-2">
-//        <span id="close">&times;</span>
-//         <img src="${element.img}" alt="Imagen del pokemon">
-//         <h5></h5>
-//         <p>Hola, soy un modal</p>
-//       </div>
-//     </div>
-//     </section>` 
-//     })
-//     document.getElementById("show-data").innerHTML = modal;
-// };
+// "Fairy","Dark","Steel"];

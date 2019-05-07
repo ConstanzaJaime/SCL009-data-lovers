@@ -112,29 +112,29 @@ window.orderData = orderData;
 
 // intentos de funcion para ordenar.
 
-// const orderPokeData = (data, sortOrder) => {
-//     if(sortOrder === 'a-z'){
-//     (a.name > b.name) ? 1 : 0;
-//   }
-//   else if (sortOrder === 'z-a'){
-//     (a.name < b.name) ? -1 : 0;
-//   })
-// }
-// window.orderPokeData = orderPokeData;
+  // const orderPokeData = (data, sortOrder) => {
+  //     if(sortOrder === 'a-z'){
+  //     (a.name > b.name) ? 1 : 0;
+  //   }
+  //   else if (sortOrder === 'z-a'){
+  //     (a.name < b.name) ? -1 : 0;
+  //   })
+  // }
+  // window.orderPokeData = orderPokeData;
 
-// const orderData= (data, sortBy, sortOrder)=>{
-//   let result="";
-//   if(sortOrder==="asc"){
-//     data.sort((a,b)=>{
-//       return a[sortBy].localeCompare(b[sortBy]);
-//     })
-//   }
-//     if(sortOrder==="des"){
-//       data.sort((a,b)=>{
-//         return b[sortBy].localeCompare(a[sortBy]);
-//       })
-
-//   };
-//   return result
-// }
-// window.orderData = orderData;
+  // const orderPoke= (data, sortBy, sortOrder)=>{
+  //   let result;
+  //   if(sortOrder==="a-z"){
+  //     data.sort((a,b)=>{
+  //       return a[sortBy].localeCompare(b[sortBy]);
+  //     })
+  //   }
+  //     if(sortOrder==="z-a"){
+  //       data.sort((a,b)=>{
+  //         return a[sortBy].localeCompare(b[sortBy]);
+  //       })
+      
+  //   }
+  //   return result
+  // }
+  // window.orderPoke = orderPoke;
