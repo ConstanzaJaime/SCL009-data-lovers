@@ -41,7 +41,7 @@ body {
 /*-----------------BARRA DE NAVEGACIÓN---------------------*/
 .navbar {
   background: rgba(178, 255, 89, .8)!important;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 .navbar-toggler{
   background: rgba(13, 71, 161,.3);
