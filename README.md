@@ -29,12 +29,12 @@ Como segundo lugar elaboramos un breve _**cuestionario**_ basándonos en lo dich
 
 Finalmente determinamos que nuestra página está dirigida principalmente a jugadores principiantes y seguidores de la serie, que quieran tener información de las capacidades de sus pokemon, teniendo una interfaz sencilla que le permita conocer los tipos de pokemon existentes y de ver las debilidades de cada uno, además de poder filtrar de acuerdo a las categorías ya mencionadas. También, como facilitador de búsqueda, se incluyó un selector que permite al usuario ordenar de forma alfabética y numérica de forma ascendente y descendente. Como otro punto se pensó en el uso de modales para mostrar información más específica de cada pokemon y no saturar visualmente la página principal.
 
-![Encuesta que define el uso de la app](src/img/encuesta-1.png)
-![Encuesta que define el uso de la app](src/img/encuesta-2-edad.png)
-![Encuesta que define el uso de la app](src/img/encuesta-3-filtrarpor.png)
-![Encuesta que define el uso de la app](src/img/encuesta-4-inforMasImportante.png)
-![Encuesta que define el uso de la app](src/img/encuesta-5-datoInteresante.png)
-![Encuesta que define el uso de la app](src/img/encuesta-6-calculo.png)
+![Encuesta usuario-item género](src/img/encuesta-1.png)
+![Encuesta usuario-item edad](src/img/encuesta-2-edad.png)
+![Encuesta usuario-item preferencias de visualización](src/img/encuesta-3-filtrarpor.png)
+![Encuesta usuario-item datos de relevancia](src/img/encuesta-4-inforMasImportante.png)
+![Encuesta usuario-item datos de interes](src/img/encuesta-5-datoInteresante.png)
+![Encuesta usuario-item preferencia de visualización de datos](src/img/encuesta-6-calculo.png)
 
 ### **3.- Historias de usuario** 
 
