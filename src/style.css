@@ -16,7 +16,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: rgb(255, 255, 255, .8);
   background-color: rgb(13, 71, 161);
-  border-radius: 5px;
+  border-radius: 2%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   padding: 3px 7%; /*APLICAR MEDIDAS RESPONSIVE  ???  */
   font-size: 48px; /*APLICAR MEDIDAS RESPONSIVE*/
@@ -41,7 +41,6 @@ body {
 /*-----------------BARRA DE NAVEGACIÓN---------------------*/
 .navbar {
   background: rgba(178, 255, 89, .8)!important;
-  /* object-fit: contain; */
 }
 .navbar-toggler{
   background: rgba(13, 71, 161,.3);
@@ -67,7 +66,6 @@ body {
   color: rgb(34, 62, 104);
 }
 
-.modal ul{
-  text-align: left;
-  margin-left: 5%;
+.modal img{
+  margin-right: 12%;
 }

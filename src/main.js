@@ -13,7 +13,7 @@ document.getElementById("root").innerHTML =
 //BOTON COMENZAR(ENTRA A LA PÁGINA PRINCIPAL Y MUESTRA POKEMON)
 document.getElementById("enterButton").addEventListener("click", () => {
   document.getElementById("root").innerHTML =
-    `
+  `
 <!--PANTALLA SECUNDARIA "CARTAS POKEMON"-->
 <div id="screen2">
   <!--NAVBAR INICIO-->
@@ -48,7 +48,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
             <option class="dropdown-item" value="Electric" href="#">Electric/Eléctrico</option>
             <option class="dropdown-item" value="Ground" href="#">Ground/Tierra</option>
             <option class="dropdown-item" value="Fighting" href="#">Fighting/Lucha</option>
-            <option class="dropdown-item" value="Psychic" href="#">Psychic/Psiquíco</option>
+            <option class="dropdown-item" value="Psychic" href="#">Psychic/Psíquico</option>
             <option class="dropdown-item" value="Rock" href="#">Rock/Roca</option>
             <option class="dropdown-item" value="Ice" href="#">Ice/Hielo</option>
             <option class="dropdown-item" value="Ghost" href="#">Ghost/Fantasma</option>
@@ -97,13 +97,16 @@ document.getElementById("enterButton").addEventListener("click", () => {
     
     <section class="cards-container" >
 
-    <div id="myModal" class="row align-items-center"> <!-- Aquí se imprime el modal --> </div>
+    <div id="myModal" class="row align-items-center"> 
+    <!-- Aquí se imprime el modal --> 
+    </div>
 
     <article id="showData" class="row" >
         <!-- Aquí se imprimen las cartas de cada pokemon -->
     </article>
     </section>
     `
+    
   //TARJETAS DE POKEMON.
   data.forEach(element => {
     document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon //115 pongo el numero del pokemon.
@@ -133,12 +136,20 @@ document.getElementById("enterButton").addEventListener("click", () => {
             </div>
             <div class="modal-body">
               <dl>
-              <dt><strong>${element.num}</strong> </dt>
-                <dd></dd>
+              <dt><strong>${element.num}</strong></dt>
+              <br>
               <dt><strong>Tipo</strong></dt>
                 <dd>${element.type}</dd>
+
+                <dt><strong>Peso</strong></dt>
+                <dd>${element.weight}</dd>
+
+                <dt><strong>Estatura</strong></dt>
+                <dd>${element.height}</dd>
+
                 <dt><strong>Debilidades</strong></dt>
-                <dd>${element.weaknesses}</dd>            
+                <dd>${element.weaknesses}</dd> 
+              
               </dl>
             </div>
           </div>
@@ -148,7 +159,6 @@ document.getElementById("enterButton").addEventListener("click", () => {
   }
 
   modal(data);
-
 
   //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
   document.getElementById("showAllPokemon").addEventListener("click", () => {
