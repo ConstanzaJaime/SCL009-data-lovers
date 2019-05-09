@@ -24,9 +24,9 @@ document.getElementById("enterButton").addEventListener("click", () => {
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="img/logo-header.png" class="img-header" alt="Logo de la página">
+    <img src="img/logo-header.png" class="img-header col- col-lg-4 " alt="Logo de la página">
     <!--DIV CONTENEDOR NAVBAR-->
-    <div class="box collapse navbar-collapse bd-highlight" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
         <li class="nav-item active">
@@ -34,7 +34,6 @@ document.getElementById("enterButton").addEventListener("click", () => {
               class="sr-only">(current)</span></a>
         </li>
         <!--NAVBAR TIPO-->
-        <div>
         Seleccionar según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="type" role="button" data-toggle="dropdown"
@@ -82,11 +81,10 @@ document.getElementById("enterButton").addEventListener("click", () => {
           </select>
         </li>
         <!--NAVBAR ORDENAR POR-->
-        Orden según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="order" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown">
-            <option class="dropdown-item" value="" selected> ORDENAR </option>
+            <option class="dropdown-item" value="" selected> ORDENAR DE:</option>
             <option class="dropdown-item" value="a-z"> A-Z </option>
             <option class="dropdown-item" value="z-a"> Z-A </option>
             <option class="dropdown-item" value="1-151"> 1-151 </option>
@@ -123,27 +121,25 @@ document.getElementById("enterButton").addEventListener("click", () => {
   function modal(pokeModal) {
     pokeModal.forEach(element => {
       document.getElementById("myModal").innerHTML +=
-      `
-      <!-- Modal -->
-      <div id="modal${element.id}" class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 align-self-center" role="document">
+        `<!-- Modal -->
+      <div id="modal${element.id}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
             <div class="modal-header">
-              <img src="${element.img}" alt="Imagen del pokemon">
+            <img src="${element.img}" alt="Imagen del pokemon">
+              <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             </div>
             <div class="modal-body">
               <dl>
-              <dt><strong> ${element.name}</strong></dt>
-                <dt><strong>${element.num}</strong></dt>
+              <dt><strong>${element.num}</strong> </dt>
                 <dd></dd>
-                <dt><strong>Tipo</strong></dt>
+              <dt><strong>Tipo</strong></dt>
                 <dd>${element.type}</dd>
                 <dt><strong>Debilidades</strong></dt>
-                <dd>${element.weaknesses}</dd>
+                <dd>${element.weaknesses}</dd>            
               </dl>
             </div>
           </div>
