@@ -6,14 +6,7 @@ cuando lo completes:
 
 ## **Pistas sobre cómo empezar a trabajar en el proyecto**
 
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
-pueden ayudar:
 
-* ¿Quiénes son los principales usuarios de producto?
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-* ¿Cuándo utilizan o utilizarían el producto?
 
 ### **Diseño de experiencia de usuario (User Experience Design)**
 
@@ -23,24 +16,10 @@ pueden ayudar:
 
 ## **Checklist**
 
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
-* [ ] Pasa linter (`npm pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
 * [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
 * [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
+* [ ] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el `README.md`.
 
 
 #Aqui estoy escribiendo
@@ -50,6 +29,8 @@ pueden ayudar:
 ### Usuario
 
 ### **1.- Definición del producto**(Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve el problema (o problemas) que tiene tu usuario.)
+
+* ¿Cuándo utilizan o utilizarían el producto?
 
 Como equipo hemos recurrido a diferentes herramientas y realizado una serie de etapas de investigación para poder cumplir de forma optima las necesidades del usuario . 
 
@@ -73,28 +54,18 @@ En el siguiente enlace se puede ver la planificación del proyecto y buscar las 
 
 Dentro del proceso creamos _**prototipos de baja fidelidad**_, donde se tomaron los puntos principales obtenidos a través del cuestionario (realizado durante el estudio del usuario), para ser utilizados en la página con la idea de ayudarlo.
 
-![Boceto 1](img/Usser-Test/Usser-Test-1.jpg)
-![Boceto 2](img/Usser-Test/Usser-Test-2.jpg)
-![Boceto 3](img/Usser-Test/Usser-Test-3.jpg)
-![Boceto 4](img/Usser-Test/Usser-Test-4.jpg)
-![Boceto 5](img/Usser-Test/Usser-Test-5.jpg)
-![Boceto 6](img/Usser-Test/Usser-Test-6.jpg)
-![Boceto 7](img/Usser-Test/Usser-Test-7.jpg)
-![Boceto 8](img/Usser-Test/Usser-Test-8.jpg)
+[Fotografía prototipo de baja fidelidad en Drive](https://drive.google.com/open?id=1MjarByTzzLahgDzRsPdHXtEMfL8bg592)
 
 #### Prototipo de alta fidelidad
 
 ![Paleta de colores](img/Color-Tool.png)
 
  Pasamos al _**prototipo de alta fidelidad**_ apoyandonos de la plataforma Figma, *dividido* en 2 partes. El primero en [formato web](https://www.figma.com/proto/UklgZbnbeiRK3uRGfYdwxycz/Pokemon-prototipe?node-id=44%3A1&scaling=min-zoom) con las opciones filtrar (por tipo o debilidad), ordenar (por nombre o número), además de lanzar el cálculo de pokemon débiles a cierto tipo, en el filtro "debilidad".El segundo en [formato móvil](https://www.figma.com/file/dHEHnZKbmbC33I0HEpZOxOSB/App-Pokemon-para-celular?node-id=0%3A1), con la opción de **CALCULAR ENTRE DOS POKEMON**.
-
-Aquí podrás ver los prototipos en [Zeplin](-----INSERTE EL ENLACE DE ZEPLIN AQUI------)
+Aquí podrás ver los prototipos en [Zeplin](zpl.io/VQvB34m)
 
 #### Testeos de usabilidad (Durante el reto deberás realizar tests de usabilidad con distintos usuarios, y en base a los resultados de esos tests, deberás iterar tus diseños. Cuéntanos qué problemas de usabilidad detectaste a través de los tests y cómo los mejoraste en tu propuesta final).
 
-![Video 1](img/Usser-Test/Usser-Test-Video-1.mp4)
-![Video 2](img/Usser-Test/Usser-Test-Video-2.mp4)
-![Video 3](img/Usser-Test/Usser-Test-Video-3.mp4)
+[Video Test de Usuario en Drive](https://drive.google.com/open?id=1YLESpd8c1876sfjE_PMoM8ctx_t6_vve)
 
 ### **4.- Implementación de la Interfaz de Usuario (HTML/CSS/JS)**
 
