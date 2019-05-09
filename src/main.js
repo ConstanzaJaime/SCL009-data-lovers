@@ -6,7 +6,7 @@ window.onload
 //Primera pantalla (Home)
 document.getElementById("root").innerHTML =
   `<div class="welcome-page col-">
-  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo col- col-sm-9 col-lg-6" alt="Logo Pokemon"></div><br><br><br>
+  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo" alt="Logo Pokemon"></div><br><br><br>
   <button id="enterButton" class="button">Comenzar</button>
   </div>`;
 
@@ -18,14 +18,15 @@ document.getElementById("enterButton").addEventListener("click", () => {
 <div id="screen2">
   <!--NAVBAR INICIO-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="img/logo-header.png" class="img-header col- col-lg-4 " alt="Logo de la página">
+    <img src="img/logo-header.png" class="img-header" alt="Logo de la página">
     <!--DIV CONTENEDOR NAVBAR-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="box collapse navbar-collapse bd-highlight" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
         <li class="nav-item active">
@@ -33,6 +34,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
               class="sr-only">(current)</span></a>
         </li>
         <!--NAVBAR TIPO-->
+        <div>
         Seleccionar según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="type" role="button" data-toggle="dropdown"
@@ -80,10 +82,11 @@ document.getElementById("enterButton").addEventListener("click", () => {
           </select>
         </li>
         <!--NAVBAR ORDENAR POR-->
+        Orden según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="order" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown">
-            <option class="dropdown-item" value="" selected> ORDENAR DE:</option>
+            <option class="dropdown-item" value="" selected> ORDENAR </option>
             <option class="dropdown-item" value="a-z"> A-Z </option>
             <option class="dropdown-item" value="z-a"> Z-A </option>
             <option class="dropdown-item" value="1-151"> 1-151 </option>
@@ -120,25 +123,27 @@ document.getElementById("enterButton").addEventListener("click", () => {
   function modal(pokeModal) {
     pokeModal.forEach(element => {
       document.getElementById("myModal").innerHTML +=
-        `<!-- Modal -->
-      <div id="modal${element.id}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+      `
+      <!-- Modal -->
+      <div id="modal${element.id}" class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 align-self-center" role="document">
           <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
             <div class="modal-header">
-            <img src="${element.img}" alt="Imagen del pokemon">
-              <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+              <img src="${element.img}" alt="Imagen del pokemon">
             </div>
             <div class="modal-body">
               <dl>
-              <dt><strong>${element.num}</strong> </dt>
+              <dt><strong> ${element.name}</strong></dt>
+                <dt><strong>${element.num}</strong></dt>
                 <dd></dd>
-              <dt><strong>Tipo</strong></dt>
+                <dt><strong>Tipo</strong></dt>
                 <dd>${element.type}</dd>
                 <dt><strong>Debilidades</strong></dt>
-                <dd>${element.weaknesses}</dd>            
+                <dd>${element.weaknesses}</dd>
               </dl>
             </div>
           </div>
@@ -222,20 +227,19 @@ document.getElementById("enterButton").addEventListener("click", () => {
     document.getElementById("type").value = ""; //Limpia orden por nombre o número
     document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
     document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-    let orderSolution = "";
     if (orderValue === "a-z") {
-      orderSolution = window.orderData(data, "name", "asc");
+      window.orderData(data, "name", "asc");
     }
     if (orderValue === "z-a") {
-      orderSolution = window.orderData(data, "name", "des");
+      window.orderData(data, "name", "des");
     }
     if (orderValue === "1-151") {
-      orderSolution = window.orderData(data, "num", "asc");
+      window.orderData(data, "num", "asc");
     }
     if (orderValue === "151-1") {
-      orderSolution = window.orderData(data, "num", "des");
+      window.orderData(data, "num", "des");
     }
-    orderSolution.forEach(element => {
+    data.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
         `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">

@@ -56,17 +56,15 @@ body {
 
 .modal-content{
   padding: 2%;
-  background-color: rgba(34, 134, 195, 1);
+  background: linear-gradient(to bottom,rgba(33, 172, 149,1),rgba(13, 71, 161,1));
+  text-align: center;
 }
-
 .modal-body{
   background-color: white;
   border-radius: 6%;
   text-align: left;
   color: rgb(34, 62, 104);
 }
-
-.modal ul{
-  text-align: left;
-  margin-left: 5%;
+.box{
+  text-align:left;
 }
