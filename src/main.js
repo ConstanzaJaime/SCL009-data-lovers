@@ -6,7 +6,7 @@ window.onload
 //Primera pantalla (Home)
 document.getElementById("root").innerHTML =
   `<div class="welcome-page col-">
-  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo col- col-sm-9 col-lg-6" alt="Logo Pokemon"></div><br><br><br>
+  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo" alt="Logo Pokemon"></div><br><br><br>
   <button id="enterButton" class="button">Comenzar</button>
   </div>`;
 
@@ -18,6 +18,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
 <div id="screen2">
   <!--NAVBAR INICIO-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -232,20 +233,19 @@ document.getElementById("enterButton").addEventListener("click", () => {
     document.getElementById("type").value = ""; //Limpia orden por nombre o número
     document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
     document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-    let orderSolution = "";
     if (orderValue === "a-z") {
-      orderSolution = window.orderData(data, "name", "asc");
+      window.orderData(data, "name", "asc");
     }
     if (orderValue === "z-a") {
-      orderSolution = window.orderData(data, "name", "des");
+      window.orderData(data, "name", "des");
     }
     if (orderValue === "1-151") {
-      orderSolution = window.orderData(data, "num", "asc");
+      window.orderData(data, "num", "asc");
     }
     if (orderValue === "151-1") {
-      orderSolution = window.orderData(data, "num", "des");
+      window.orderData(data, "num", "des");
     }
-    orderSolution.forEach(element => {
+    data.forEach(element => {
       document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
         `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
       <div class="each-card" id="eachCard">
