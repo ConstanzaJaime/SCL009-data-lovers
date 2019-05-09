@@ -1,19 +1,17 @@
-#Pokemon-Data Lovers
+# Pokemon-Data Lovers
+
+![Encuesta que define el uso de la app](src/img/Logo-README.png)
 
 
-#Indice
-* Modo de uso
+# Indice
 * Investigación del usuario y prototipado
     * Definición del producto
     * Cuestionario
     * Historias de usuario
-* Desiciones de Diseño
+* Deciciones de Diseño
 * Futuras mejoras
 
 
-# Modo de uso.
-
-Para empezar a usar PokeCards, debes clickear 
 
 # Quiénes somos 📢 
 
@@ -46,7 +44,7 @@ En el siguiente enlace se puede ver la planificación del proyecto y buscar las 
 - [Historia de usuario 3](https://trello.com/c/o4EC464E/22-hu-3)
 - [Historia de usuario 4](https://trello.com/c/pBktnNl4/43-hu-4)
 
-# Desiciones de Diseño
+# Desiciones de Diseño 🎨📎
 
 ### **1.- Prototipo de baja fidelidad.**
 
@@ -74,10 +72,13 @@ Aquí podrás ver los prototipos en [Zeplin](zpl.io/VQvB34m)
 - Una de las dificultades presentadas por el usuario fueron las de encontrar el botón para volver a ver todas las tarjetas, el cual se encontraba en el logo, por lo que se coloco de forma literal con el texto clickeable de "Ver todos los pokemon".
 - Otra de las cosas que le interesaban al usuario eran la de saber donde estaban posicionado al realizar los filtros, por ejemplo: al filtrar por tipo "fuego", tener algún lugar en la página donde señalara que los pokemon mostrados eran de tipo "fuego". Esto se resolvió al incluir el cálculo, en donde al mostrarle al usuario la cantidad de pokemon que existen por ese tipo determinado, aparece además el nombre de la selección, por ejemplo:"Existen 21 pokemon tipo Planta".
 
-# Futuras mejoras
+# Futuras mejoras 📌
 En un futuro cercano, esperamos realizar mejoras en la interfaz que permitan al usuario una mejor experiencia, algunas de ellas son, crear una pantalla que muestre a través de un gráfico porcentual la cantidad de tipo y debilidades a fin de ilustrar mejor las estadísticas y que a la vez el cálculo sea más agradable a ojos del usuario.
 Otra de las mejoras que tenemos en cuenta, es una pantalla dónde se incluyan las instrucciones de uso, para solventar toda duda del usuario en caso de que la tenga.
 
-## Equipo desarrollador:
-* Constanza Jaime   🐣 
+
+
+## Equipo desarrollador: 👯
+
+* Constanza Jaime "Konna"   🐣 
 * Paula Sáez "Agatha"   🐀
