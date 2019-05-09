@@ -8,20 +8,20 @@
 
 //FILTRO DE POKEMON POR TIPO O DEBILIDAD
 const filterPoke = (data, condition, filterBy) => {
-  let result = data.filter(element => {
+  let filterResult = data.filter(element => {
     return element[filterBy].includes(condition);
   })
-  return result;
+  return filterResult;
 };
 window.filterPoke = filterPoke;
 
 //CONTADOR DE POKEMON POR TIPO O DEBILIDAD
 const counter = (data, condition, counterBy) => {
-  let result = data.reduce((contador, data) => {
+  let result = data.reduce((counterResult, data) => {
     if (data[counterBy].includes(condition)) {
-      return contador + 1;
+      return counterResult + 1;
     } else {
-      return contador;
+      return counterResult;
     }
   }, 0)
   return result;
@@ -30,14 +30,14 @@ window.counter = counter;
 
 //ORDENAR LA DATA
 const orderData = (data, sortBy, sortOrder) => {
-  const comparar = data.sort((a, b) => {
+  const orderResult = data.sort((a, b) => {
     return a[sortBy].localeCompare(b[sortBy]);
   })
   if (sortOrder === "asc") {
-    return comparar;
+    return orderResult;
   }
   if (sortOrder === "des") {
-    return comparar.reverse();
+    return orderResult.reverse();
   }
 }
 window.orderData = orderData;

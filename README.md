@@ -26,6 +26,10 @@ En el siguiente enlace se puede ver la planificación del proyecto y buscar las 
 
 #### Prototipo de baja fidelidad.
 
+####Control de Flujo 
+
+![Control de Flujo](src/img/Control-de-Flujo.jpeg)
+
 Dentro del proceso creamos _**prototipos de baja fidelidad**_, donde se tomaron los puntos principales obtenidos a través del cuestionario (realizado durante el estudio del usuario), para ser utilizados en la página con la idea de ayudarlo.
 
 [Fotografía prototipo de baja fidelidad en Drive](https://drive.google.com/open?id=1MjarByTzzLahgDzRsPdHXtEMfL8bg592)

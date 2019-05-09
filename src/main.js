@@ -6,7 +6,7 @@ window.onload
 //Primera pantalla (Home)
 document.getElementById("root").innerHTML =
   `<div class="welcome-page col-">
-  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo" alt="Logo Pokemon"></div><br><br><br>
+  <div class="col-"><img src="img/PokemonGoLogo.png" class="big-logo col-sm- col-lg-6" alt="Logo Pokemon"></div><br><br><br>
   <button id="enterButton" class="button">Comenzar</button>
   </div>`;
 
@@ -24,16 +24,20 @@ document.getElementById("enterButton").addEventListener("click", () => {
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="img/logo-header.png" class="img-header col- col-lg-4 " alt="Logo de la página">
+    <img src="img/logo-header-01.png" class="img-header col- col-lg-4 " alt="Logo de la página">
     <!--DIV CONTENEDOR NAVBAR-->
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <!--NAVBAR MOSTRAR TODOS LOS POKEMON-->
+        <div class="box-navbar px-5">
         <li class="nav-item active">
           <a class="nav-link button" id="showAllPokemon" href="#"><strong>Ver todos los pokemon</strong><span
               class="sr-only">(current)</span></a>
         </li>
+        </div>
         <!--NAVBAR TIPO-->
+        <div class="box-navbar px-5">
         Seleccionar según: <br>
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="type" role="button" data-toggle="dropdown"
@@ -80,7 +84,10 @@ document.getElementById("enterButton").addEventListener("click", () => {
             <option class="dropdown-item" value="Steel" href="#">Steel/Acero</option>
           </select>
         </li>
+        </div>
         <!--NAVBAR ORDENAR POR-->
+        <div class="box-navbar px-5">
+        Ordenar por:
         <li class="nav-item dropdown" class="dropdown-menu">
           <select class="nav-link dropdown-toggle" href="#" id="order" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" aria-labelledby="navbarDropdown">
@@ -91,6 +98,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
             <option class="dropdown-item" value="151-1"> 151-1 </option>
           </select>
         </li>
+        </div>
       </ul>
     </div>
   </nav>
@@ -125,7 +133,7 @@ document.getElementById("enterButton").addEventListener("click", () => {
     pokeModal.forEach(element => {
       document.getElementById("myModal").innerHTML +=
         `<!-- Modal -->
-      <div id="modal${element.id}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div id="modal${element.id}" class="modal fade col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 align-self-center" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">

@@ -9,7 +9,7 @@ body {
 }
 .welcome-page{
   position: relative;
-  top: 20vh ;
+  top: 15vh ;
 }
 /*BOTON COMENZAR*/
 #enterButton{
@@ -18,8 +18,8 @@ body {
   background-color: rgb(13, 71, 161);
   border-radius: 2%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  padding: 3px 7%; /*APLICAR MEDIDAS RESPONSIVE  ???  */
-  font-size: 48px; /*APLICAR MEDIDAS RESPONSIVE*/
+  padding: 3px 7%; 
+  font-size: 48px;
 }
 /*----------------------TARJETAS---------------------------*/
 .cards-container{
@@ -30,7 +30,6 @@ body {
 .cards { /*NO MODIFICAR ALTOS Y ANCHOS, eso va en bootstrap!!!*/
   border-radius: 2%; 
   padding: 1.5rem;
-  /* margin: .5em;  */
   background: linear-gradient(to bottom, rgba(255,255,255,.4),rgba(13, 71, 161,.2));
   border: 2px solid rgba(13, 71, 161);
 }
@@ -45,14 +44,10 @@ body {
 .navbar-toggler{
   background: rgba(13, 71, 161,.3);
 }
-
-/*-------------------------EXTRAS--------------------------*/
-/*CAMBIO DE CURSOR A POKEBOLA*/
-.button:hover, .nav-link:hover, .cards:hover{
-  cursor: url(cursor/Pokeball_normal_select.cur), pointer;
+.box-navbar{
+  text-align: left;
 }
   /*-------------------------MODAL--------------------------*/
-
 .modal-content{
   padding: 2%;
   background: linear-gradient(to bottom,rgba(33, 172, 149,1),rgba(13, 71, 161,1));
@@ -63,4 +58,9 @@ body {
   border-radius: 6%;
   text-align: left;
   color: rgb(34, 62, 104);
+}
+/*-------------------------EXTRAS--------------------------*/
+/*CAMBIO DE CURSOR A POKEBOLA*/
+.button:hover, .nav-link:hover, .cards:hover{
+  cursor: url(cursor/Pokeball_normal_select.cur), pointer;
 }
