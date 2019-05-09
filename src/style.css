@@ -16,7 +16,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: rgb(255, 255, 255, .8);
   background-color: rgb(13, 71, 161);
-  border-radius: 5px;
+  border-radius: 2%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   padding: 3px 7%; /*APLICAR MEDIDAS RESPONSIVE  ???  */
   font-size: 48px; /*APLICAR MEDIDAS RESPONSIVE*/
@@ -48,7 +48,7 @@ body {
 
 /*-------------------------EXTRAS--------------------------*/
 /*CAMBIO DE CURSOR A POKEBOLA*/
-.button:hover{
+.button:hover, .nav-link:hover, .cards:hover{
   cursor: url(cursor/Pokeball_normal_select.cur), pointer;
 }
 
@@ -64,7 +64,4 @@ body {
   border-radius: 6%;
   text-align: left;
   color: rgb(34, 62, 104);
-}
-.box{
-  text-align:left;
 }

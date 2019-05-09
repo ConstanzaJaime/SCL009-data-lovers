@@ -88,6 +88,7 @@ describe('orderData', () => {
     
     }])
   });
+  
   it('debería retornar arrays ordenados por nombre de a-z', () => {
     assert.deepEqual(window.orderData(POKEMON,"name","asc"),[{
       "num": "001",
@@ -107,4 +108,47 @@ describe('orderData', () => {
         "Fire"
     }])
   });
+
+  it('debería retornar los objetos dentro del array ordenados por número de forma ascendente', () => {
+    assert.deepEqual(window.orderData(POKEMON, "num", "asc"),
+    [{
+      "num": "001",
+      "name": "Bulbasaur",
+      "type": "Poison",
+      "weaknesses": "Ice"
+    },{
+      "num": "003",
+      "name": "Venusaur",
+      "type": "Grass",
+      "weaknesses": 
+        "Fire"
+    },{
+      "num": "074",
+      "name": "Geodude",
+      "type": "Rock",
+      "weaknesses": "Water" 
+    }])
+  });
+
+  it('debería retornar los objetos dentro del array ordenados por número de forma descendente', () => {
+    assert.deepEqual(window.orderData(POKEMON, "num", "des"),
+    [{
+      "num": "074",
+      "name": "Geodude",
+      "type": "Rock",
+      "weaknesses": "Water" 
+    },{
+      "num": "003",
+      "name": "Venusaur",
+      "type": "Grass",
+      "weaknesses": 
+        "Fire"
+    },{
+      "num": "001",
+      "name": "Bulbasaur",
+      "type": "Poison",
+      "weaknesses": "Ice"
+    }])
+  });
+
 });
