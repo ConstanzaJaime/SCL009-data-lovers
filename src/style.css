@@ -2,65 +2,86 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  text-align: center; 
+  text-align: center;
   height: 100vh;
   background-attachment: fixed !important;
-  background: linear-gradient(to bottom, rgb(33, 172, 149), rgb(178, 255, 89,1));
+  background: linear-gradient(to bottom, rgb(33, 172, 149), rgb(178, 255, 89, 1));
 }
-.welcome-page{
+
+.welcome-page {
   position: relative;
-  top: 15vh ;
+  top: 15vh;
 }
+
 /*BOTON COMENZAR*/
-#enterButton{
+#enterButton {
   font-family: 'Roboto', sans-serif;
   color: rgb(255, 255, 255, .8);
   background-color: rgb(13, 71, 161);
   border-radius: 2%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  padding: 3px 7%; 
+  padding: 3px 7%;
   font-size: 48px;
 }
+
 /*----------------------TARJETAS---------------------------*/
-.cards-container{
+.cards-container {
   align-content: center;
-  padding:2% 5%;
+  padding: 2% 5%;
   text-align: center;
 }
-.cards { /*NO MODIFICAR ALTOS Y ANCHOS, eso va en bootstrap!!!*/
-  border-radius: 2%; 
+
+.cards {
+  /*NO MODIFICAR ALTOS Y ANCHOS, eso va en bootstrap!!!*/
+  border-radius: 2%;
   padding: 1.5rem;
-  background: linear-gradient(to bottom, rgba(255,255,255,.4),rgba(13, 71, 161,.2));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .4), rgba(13, 71, 161, .2));
   border: 2px solid rgba(13, 71, 161);
 }
-.counter-text{
-  font-size:30px;
+
+.counter-text {
+  font-size: 30px;
   padding: 0% 0% 2% 0%;
 }
+
 /*-----------------BARRA DE NAVEGACIÓN---------------------*/
 .navbar {
-  background: rgba(178, 255, 89, .8)!important;
+  background: rgba(178, 255, 89, .8) !important;
 }
-.navbar-toggler{
-  background: rgba(13, 71, 161,.3);
+
+.navbar-toggler {
+  background: rgba(13, 71, 161, .3);
 }
-.box-navbar{
+
+.box-navbar {
   text-align: left;
 }
-  /*-------------------------MODAL--------------------------*/
-.modal-content{
+
+/*-------------------------MODAL--------------------------*/
+.modal-content {
   padding: 2%;
-  background: linear-gradient(to bottom,rgba(33, 172, 149,1),rgba(13, 71, 161,1));
+  background: linear-gradient(to bottom, rgba(33, 172, 149, 1), rgba(13, 71, 161, 1));
   text-align: center;
 }
-.modal-body{
+
+.modal-body {
   background-color: white;
   border-radius: 6%;
   text-align: left;
   color: rgb(34, 62, 104);
 }
+
 /*-------------------------EXTRAS--------------------------*/
 /*CAMBIO DE CURSOR A POKEBOLA*/
-.button:hover, .nav-link:hover, .cards:hover{
+.button:hover,
+.nav-link:hover,
+.cards:hover {
   cursor: url(cursor/Pokeball_normal_select.cur), pointer;
+}
+/*-------------------------GRÁFICO--------------------------*/
+.chart{
+  text-align: center;
+}
+rect{
+  background: none!important;
 }
