@@ -8,7 +8,7 @@
     * Definición del producto
     * Cuestionario
     * Historias de usuario
-* Deciciones de Diseño
+* Decisiones de Diseño
 * Futuras mejoras
 
 

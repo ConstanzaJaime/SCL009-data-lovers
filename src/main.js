@@ -115,205 +115,166 @@ document.getElementById("enterButton").addEventListener("click", () => {
     </article>
     </section>
     `
-    fetch('https://raw.githubusercontent.com/ConstanzaJaime/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
+  let printCards = function (el) {
+    return el.forEach(element => {
+      document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
+        `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
+        <div class="each-card" id="eachCard">
+        <h5 class="card-title"><strong>${element.num}</strong></h5>
+            <img src="${element.img}" class="card-img-top" alt="${element.name}">
+            <h5 class="card-title"><strong>${element.name}</strong></h5>
+        </div>
+        </a>`
+      // MODAL QUE MUESTRA LA INFORMACIÓN DE CADA POKEMON.
+      function modal(pokeModal) {
+        pokeModal.forEach(element => {
+          document.getElementById("myModal").innerHTML +=
+            `<!-- Modal -->
+            <div id="modal${element.id}" class="modal fade col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 align-self-center" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                  <img src="${element.img}" alt="Imagen del pokemon">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                    <dl>
+                    <dt><strong>${element.num}</strong></dt>
+                    <br>
+                    <dt><strong>Tipo</strong></dt>
+                      <dd>${element.type}</dd>
+                      <dt><strong>Peso</strong></dt>
+                      <dd>${element.weight}</dd>
+                      <dt><strong>Estatura</strong></dt>
+                      <dd>${element.height}</dd>
+                      <dt><strong>Debilidades</strong></dt>
+                      <dd>${element.weaknesses}</dd> 
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>`
+        });
+      }
+
+      modal(el);
+    })
+  };
+
+  fetch('https://raw.githubusercontent.com/ConstanzaJaime/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
     .then(res => res.json())
     // .then(myJson => myJson.pokemon)
-    .then(data=>{
-      data=data.pokemon;
-  //TARJETAS DE POKEMON.
-  data.forEach(element => {
-    document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon //115 pongo el numero del pokemon.
-      `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
-      <div class="each-card">
-          <h5 class="card-title"><strong>${element.num}</strong></h5>
-          <img src="${element.img}" class="card-img-top" alt="${element.name}">
-          <h5 class="card-title"><strong>${element.name}</strong></h5>
-      </div>
-      </a>`
-  });
+    .then(data => {
+      data = data.pokemon;
+      //TARJETAS DE POKEMON.
+      printCards(data);
 
-  // MODAL QUE MUESTRA LA INFORMACIÓN DE CADA POKEMON.
-  function modal(pokeModal) {
-    pokeModal.forEach(element => {
-      document.getElementById("myModal").innerHTML +=
-        `<!-- Modal -->
-      <div id="modal${element.id}" class="modal fade col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 align-self-center" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-            <img src="${element.img}" alt="Imagen del pokemon">
-              <h4 class="modal-title" id="exampleModalCenterTitle">${element.name}</h4>            
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-              <dl>
-              <dt><strong>${element.num}</strong></dt>
-              <br>
-              <dt><strong>Tipo</strong></dt>
-                <dd>${element.type}</dd>
-
-                <dt><strong>Peso</strong></dt>
-                <dd>${element.weight}</dd>
-
-                <dt><strong>Estatura</strong></dt>
-                <dd>${element.height}</dd>
-
-                <dt><strong>Debilidades</strong></dt>
-                <dd>${element.weaknesses}</dd> 
-              
-              </dl>
-            </div>
-          </div>
-        </div>
-      </div>`
-    });
-  }
-
-  modal(data);
-
-
-    //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
-    document.getElementById("showAllPokemon").addEventListener("click", () => {
-      document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
-      document.getElementById("type").value = ""; //Limpia select por tipo
-      document.getElementById("order").value = ""; //Limpia orden por nombre o número
-      document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-      data.forEach(element => {
-        document.getElementById("showData").innerHTML += //Imprime tarjetas de pokemon
-          `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
-        <div class="each-card" id="eachCard">
-        <h5 class="card-title"><strong>${element.num}</strong></h5>
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title"><strong>${element.name}</strong></h5>
-        </div>
-        </a>`
+      //REGRESA A LA PÁGINA PRINCIPAL DONDE SE MUESTRAN TODOS LOS POKEMON
+      document.getElementById("showAllPokemon").addEventListener("click", () => {
+        document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
+        document.getElementById("type").value = ""; //Limpia select por tipo
+        document.getElementById("order").value = ""; //Limpia orden por nombre o número
+        document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+        printCards(data);
       });
-    });
 
 
-    //MUESTRA LOS POKEMON SEGUN TIPO
-    document.getElementById("type").addEventListener("change", () => {
-      let selectValue = document.getElementById("type").value; //Retorna valor seleccionado por el usuario
-      let type = window.filterPoke(data, selectValue, "type"); //Retorna objs de los pokemon del tipo seleccionado
-      let typeCounter = window.counter(data, selectValue, "type") //Retorna el n° de pokemon por tipo
-      document.getElementById("order").value = ""; //Limpia orden por nombre o número
-      document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
-      document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-      document.getElementById("showData").innerHTML = //Imprime n° de pokemon por tipo
-        `<div class="counter-text col-12">Existen ${typeCounter} pokemon tipo ${selectValue}</div>`
+      //MUESTRA LOS POKEMON SEGUN TIPO
+      document.getElementById("type").addEventListener("change", () => {
+        let selectValue = document.getElementById("type").value; //Retorna valor seleccionado por el usuario
+        let type = window.filterPoke(data, selectValue, "type"); //Retorna objs de los pokemon del tipo seleccionado
+        let typeCounter = window.counter(data, selectValue, "type") //Retorna el n° de pokemon por tipo
+        document.getElementById("order").value = ""; //Limpia orden por nombre o número
+        document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
+        document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+        document.getElementById("showData").innerHTML = //Imprime n° de pokemon por tipo
+          `<div class="counter-text col-12">Existen ${typeCounter} pokemon tipo ${selectValue}</div>`
 
 
-      //   <!--Div que contendrá el gráfico circular-->
-      //  <div id="chart_div" type="text/javascript" class="chart col-12"></div>
-//        var Chart = require('chart.js');
-  
-// <canvas id="myChart" width="400" height="400"></canvas>
+        //   <!--Div que contendrá el gráfico circular-->
+        //  <div id="chart_div" type="text/javascript" class="chart col-12"></div>
+        //        var Chart = require('chart.js');
 
-// var ctx = document.getElementById('myChart').getContext('2d');
+        // <canvas id="myChart" width="400" height="400"></canvas>
 
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
+        // var ctx = document.getElementById('myChart').getContext('2d');
 
-      type.forEach(element => {
-        document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-          `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
-        <div class="each-card" id="eachCard">
-        <h5 class="card-title"><strong>${element.num}</strong></h5>
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title"><strong>${element.name}</strong></h5>
-        </div>
-        </a>`
+        // var myChart = new Chart(ctx, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        //         datasets: [{
+        //             label: '# of Votes',
+        //             data: [12, 19, 3, 5, 2, 3],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)',
+        //                 'rgba(255, 159, 64, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)',
+        //                 'rgba(255, 159, 64, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             yAxes: [{
+        //                 ticks: {
+        //                     beginAtZero: true
+        //                 }
+        //             }]
+        //         }
+        //     }
+        // });
+        printCards(type);
       });
-    });
 
-    //MUESTRA LOS POKEMON SEGUN DEBILIDAD 
-    document.getElementById("weaknesses").addEventListener("change", () => {
-      let selectValue = document.getElementById("weaknesses").value; //Retorna valor seleccionado por el usuario
-      let weak = window.filterPoke(data, selectValue, "weaknesses"); //Retorna objs de los pokemon del tipo seleccionado
-      let weakCounter = window.counter(data, selectValue, "weaknesses") //Retorna el n° de pokemon por debilidad
-      document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-      document.getElementById("order").value = ""; //Limpia orden por nombre o número
-      document.getElementById("type").value = ""; //Limpia select por tipo
-      document.getElementById("showData").innerHTML = //Imprime n° de pokemon por debilidad
-        `<div class="counter-text col-12">Existen ${weakCounter} pokemon débiles al tipo ${selectValue}</div>`
-      weak.forEach(element => {
-        document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-          `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
-        <div class="each-card" id="eachCard">
-        <h5 class="card-title"><strong>${element.num}</strong></h5>
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title"><strong>${element.name}</strong></h5>
-        </div>
-        </a>`
+      //MUESTRA LOS POKEMON SEGUN DEBILIDAD 
+      document.getElementById("weaknesses").addEventListener("change", () => {
+        let selectValue = document.getElementById("weaknesses").value; //Retorna valor seleccionado por el usuario
+        let weak = window.filterPoke(data, selectValue, "weaknesses"); //Retorna objs de los pokemon del tipo seleccionado
+        let weakCounter = window.counter(data, selectValue, "weaknesses") //Retorna el n° de pokemon por debilidad
+        document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+        document.getElementById("order").value = ""; //Limpia orden por nombre o número
+        document.getElementById("type").value = ""; //Limpia select por tipo
+        document.getElementById("showData").innerHTML = //Imprime n° de pokemon por debilidad
+          `<div class="counter-text col-12">Existen ${weakCounter} pokemon débiles al tipo ${selectValue}</div>`
+          printCards(weak);
       });
-    });
 
-    //ORDENA LOS POKEMON SEGÚN SELECCIÓN
-    document.getElementById("order").addEventListener("change", () => {
-      let orderValue = document.getElementById("order").value; //Retorna valor seleccionado por el usuario
-      document.getElementById("type").value = ""; //Limpia orden por nombre o número
-      document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
-      document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
-      if (orderValue === "a-z") {
-        window.orderData(data, "name", "asc");
-      }
-      if (orderValue === "z-a") {
-        window.orderData(data, "name", "des");
-      }
-      if (orderValue === "1-151") {
-        window.orderData(data, "num", "asc");
-      }
-      if (orderValue === "151-1") {
-        window.orderData(data, "num", "des");
-      }
-      data.forEach(element => {
-        document.getElementById("showData").innerHTML += //Imprime pokemon por tipo
-          `<a class="cards col-6 col-sm-4	col-md-3 col-lg-3	col-xl-2 btn btn-primary" data-toggle="modal" data-target="#modal${element.id}"> 
-        <div class="each-card" id="eachCard">
-        <h5 class="card-title"><strong>${element.num}</strong></h5>
-            <img src="${element.img}" class="card-img-top" alt="${element.name}">
-            <h5 class="card-title"><strong>${element.name}</strong></h5>
-        </div>
-        </a>`
+      //ORDENA LOS POKEMON SEGÚN SELECCIÓN
+      document.getElementById("order").addEventListener("change", () => {
+        let orderValue = document.getElementById("order").value; //Retorna valor seleccionado por el usuario
+        document.getElementById("type").value = ""; //Limpia orden por nombre o número
+        document.getElementById("weaknesses").value = ""; //Limpia select por debilidad
+        document.getElementById("showData").innerHTML = ""; //Limpia tarjetas anteriores
+        if (orderValue === "a-z") {
+          window.orderData(data, "name", "asc");
+        }
+        if (orderValue === "z-a") {
+          window.orderData(data, "name", "des");
+        }
+        if (orderValue === "1-151") {
+          window.orderData(data, "num", "asc");
+        }
+        if (orderValue === "151-1") {
+          window.orderData(data, "num", "des");
+        }
+        printCards(data);
       });
-    });
-})
+    })
 });
 
 
